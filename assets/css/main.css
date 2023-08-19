@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;600;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none !important;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Vazirmatn", sans-serif;
+}
+:root {
+  --main-color: #ffffff;
+  --second-color: #d50004;
+  --font-color: #2d3748;
+  --border-color:#1A202C;
+}
+body {
+  height: 200vh;
+  position: relative;
+  /* background-color: var(--main-color); */
+}
+
+
+/* -------------------------header-start------------------------------------ */
+
+
+
+.navBar__container {
+  border-bottom: 1px hsla(0, 0%, 60%, 0.7) solid;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background-color: var(--main-color);
+}
+.navBar__container .navbar {
+  align-items: center;
+  /* background-color: red; */
+}
+
+.navBar__rightSide {
+  padding-right: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: calc(100% / 2);
+  /* background-color: #d19855; */
+}
+
+.searchbar {
+  width: 100%;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  padding: 10px 40px 10px 15px;
+  border-radius: 9px;
+  gap: 10px;
+  border: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+.searchbar:hover {
+  background-color: #b1b3b95c;
+}
+
+.searchbar .icon {
+  /* color: rgba(240, 248, 255, 0.693); */
+  display: flex;
+}
+
+.searchbar input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #333b !important;
+}
+
+.searchbar input::placeholder {
+  /* color: rgba(240, 248, 255, 0.693); */
+  /* font-family: "Segoe"; */
+}
+
+.navBar__rightSide .navbar__toggle-menu {
+  /* background-color: #d50105; */
+  padding: 0.5rem;
+  border-radius: 9px;
+  border: 1px solid rgba(51, 51, 51, 0.5);
+}
+.navbar__toggle-menu i {
+  font-size: 20px;
+}
+.navBar__rightSide .logo img {
+  height: 37px;
+  width: 100px !important;
+  object-fit: contain;
+}
+.navList-container {
+  /* align-items: center;
+    display: flex;
+    justify-content: center; */
+}
+.navList-container .nav__list {
+  /* align-items: center !important; */
+  margin: 0;
+}
+.navList-container .nav__list,
+.nav__list a {
+  color: var(--font-color);
+}
+
+/* -------------------------slider-start------------------------------------ */
+.owl-carousel .item img{
+  object-fit: cover;
+}
+
+.owl-dots .owl-dot span {
+  background: #000 !important;
+  opacity: 0.25;
+}
+.owl-dots .owl-dot.active span {
+  background: var(--second-color) !important;
+  width: 40px !important;
+  height: 8px !important;
+  border-radius: 20px !important;
+  opacity: 80% !important;
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+.owl-carousel {
+  position: relative;
+}
+
+.owl-nav {
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  left: 0;
+}
+.owl-nav button:nth-child(1) {
+  position: absolute;
+  right: 18px;
+  transform: rotate(180deg);
+  height: 50px;
+  width: 50px;
+  border-radius: 99px !important;
+  border: 1px solid rgba(200, 200, 200, 0.6) !important;
+  background-color: #d8d8d8  !important;
+  outline: none;
+
+}
+.owl-nav button:nth-child(2) {
+  transform: rotate(180deg);
+  position: absolute;
+  left: 18px;
+  height: 50px;
+  width: 50px;
+  outline: none;
+  border-radius: 99px !important;
+  border: 1px solid rgba(200, 200, 200, 0.6) !important;
+  background-color: rgba(224, 224, 224, 0.6)  !important;
+}
+
+/* -------------------------slider-end------------------------------------ */
+
+.box-container{
+  padding: 0.5rem;
+  border: 1px solid #bbbbbb;
+  border-radius: 10px;
+  color: var(--border-color);
+}
+.box-container h2{
+  font-size:0.875rem ;
+}
+.box-container p{
+  font-size: .75rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+  height: 100% !important;
+  display: flex !important;
+}
+
+.card img {
+  height: 300px;
+  object-fit: contain;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  flex: 1;
+}
+
+.card-price {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #999;
+} 
+
+.loading{
+    background-color: #333;
+    color: white;
+    position: fixed;
+    inset: 0;
+    z-index: 33;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+}
+.loading.done{
+    transition: 0.5s ;
+    opacity: 0;
+    visibility: hidden;
+}
+.loading i {
+    font-size: 200px;
+    animation: khamis 0.7s infinite linear; 
+}
+
+@keyframes khamis {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
