@@ -40,3 +40,41 @@
 // function reloadPage() {
 //     window.location.reload();
 // }
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".loading").classList.add("done");
+});
+// const toggleMenu = document.querySelector(".navbar__toggle-menu");
+// const modalContainer = document.querySelector(".modal-container");
+
+// toggleMenu.addEventListener("click", () => {});
+
+const closeModal = (e) => {
+  let element = document.getElementById(e);
+  element.classList.remove("active");
+  document.querySelector("body").style.overflow = "auto";
+  document.querySelector("body").style.paddingRight = "0";
+};
+const popupBtns = document.querySelectorAll(".popup-event");
+popupBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    let element = document.getElementById(btn.getAttribute("data-id"));
+    element.classList.toggle("active");
+    if (element.classList.contains("active")) {
+      document.querySelector("body").style.overflow = "hidden";
+      document.querySelector("body").style.paddingRight = "17px";
+    } else {
+      document.querySelector("body").style.overflow = "auto";
+      document.querySelector("body").style.paddingRight = "0";
+    }
+  });
+});
+
+
+
+document.addEventListener('keydown', (event) => {
+  const key = event.key; 
+  if (key === "Escape") {
+    closeModal('menu')
+    closeModal('login')
+  }
+});
