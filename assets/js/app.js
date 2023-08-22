@@ -1,14 +1,79 @@
-// const callBack = async (url) => {
-//     let data = null;
-//     try {
-//         let res = await fetch(url);
-//         data = await res.json();
-//     } catch {
-//         data = false;
-//     }
-//     return await data;
-// };
-// callBack("https://fakestoreapi.com/products")
+const callBack = async (url) => {
+  let data = null;
+  try {
+    let res = await fetch(url);
+    data = await res.json();
+  } catch {
+    data = false;
+  }
+  return await data;
+};
+// import {  } from "../products.json";
+callBack("../products.json").then((res) => {
+  const products = document.querySelector(".products-slider");
+  products.innerHTML = "";
+  res.products.forEach((product) => {
+    products.innerHTML += `
+    <div class="item">
+          <div class="">
+            <img
+              src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg"
+              alt=""
+            />
+            </div>
+          <div class="">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>
+              <span class="old__price">$45</span
+              ><span class="new__price">$45</span>
+            </p>
+            <div class="colors">
+              <div style="background-color: blue;" class="black__color"></div>
+              <div style="background-color: blue;" class="black__color"></div>
+              <div style="background-color: blue;" class="black__color"></div>
+              <div style="background-color: blue;" class="black__color"></div>
+            </div>
+          </div>
+        </div>
+    
+    `;
+  });
+}).then(r=>{
+    $(".owl-carousel.products-slider").owlCarousel({
+        loop: true,
+        rtl: true,
+        autoplay: true,
+        margin: 10,
+        autoplayTimeout: 5000,
+        nav: true,
+        navText: [
+          '<i class="fas fa-chevron-left"></i>',
+          '<i class="fas fa-chevron-right"></i>',
+        ],
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          800: {
+            items: 4,
+          },
+          950: {
+            items: 5,
+          },
+          1100: {
+            items: 5,
+          },
+          1150: {
+            items: 5,
+          },
+        },
+      });
+}
+  );
+
 //     .then((res) => {
 //         const card__container = document.querySelector(".card__container");
 //         card__container.innerHTML = "";
@@ -69,12 +134,10 @@ popupBtns.forEach((btn) => {
   });
 });
 
-
-
-document.addEventListener('keydown', (event) => {
-  const key = event.key; 
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
   if (key === "Escape") {
-    closeModal('menu')
-    closeModal('login')
+    closeModal("menu");
+    closeModal("login");
   }
 });

@@ -269,7 +269,7 @@ body {
   left: 50%;
   z-index: 999;
   transform: translate(-50%, -50%);
-  /* visibility: hidden; */
+  visibility: hidden;
   transition: visibility 0s 0s;
 }
 .active .box__container {
@@ -393,4 +393,21 @@ body {
     width: 30px !important;
     font-size: 12px !important;
   }
+}
+
+
+.colors{
+  margin: auto;
+  gap: 5px;
+width: fit-content;
+display: grid;
+justify-content: center;
+align-items: center;
+grid-template-columns: repeat(3 , minmax(0,1fr));
+
+}
+.colors .black__color{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }

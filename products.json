@@ -1,0 +1,113 @@
+{"products": [
+    {
+      "id": 1,
+      "name": {
+        "en": "Men's Running Shoes",
+        "ar": "أحذية رياضية للرجال"
+      },
+      "price": 59.99,
+      "old_price": 79.99,
+      "color": "#000000",
+      "image": "./assets/image/products/mens_running_shoes.jpg"
+    },
+    {
+      "id": 2,
+      "name": {
+        "en": "Women's Sneakers",
+        "ar": "حذاء نسائي رياضي"
+      },
+      "price": 49.99,
+      "old_price": 59.99,
+      "color": "#FFFFFF",
+      "image": "./assets/image/products/womens_sneakers.jpg"
+    },
+    {
+      "id": 3,
+      "name": {
+        "en": "Kids' Sports Shoes",
+        "ar": "حذاء رياضي للأطفال"
+      },
+      "price": 39.99,
+      "old_price": 49.99,
+      "color": "#0000FF",
+      "image": "./assets/image/products/kids_sports_shoes.jpg"
+    },
+    {
+      "id": 4,
+      "name": {
+        "en": "Women's High Heels",
+        "ar": "كعب عالي نسائي"
+      },
+      "price": 79.99,
+      "old_price": 99.99,
+      "color": "#FF0000",
+      "image": "./assets/image/products/womens_high_heels.jpg"
+    },
+    {
+      "id": 5,
+      "name": {
+        "en": "Men's Formal Shoes",
+        "ar": "أحذية رجالية رسمية"
+      },
+      "price": 89.99,
+      "old_price": 109.99,
+      "color": "#A52A2A",
+      "image": "./assets/image/products/mens_formal_shoes.jpg"
+    },
+    {
+      "id": 6,
+      "name": {
+        "en": "Women's Sandals",
+        "ar": "صنادل نسائية"
+      },
+      "price": 29.99,
+      "old_price": 39.99,
+      "color": "#F5DEB3",
+      "image": "./assets/image/products/womens_sandals.jpg"
+    },
+    {
+      "id": 7,
+      "name": {
+        "en": "Unisex Casual Shoes",
+        "ar": "أحذية كاجوال للجنسين"
+      },
+      "price": 34.99,
+      "old_price": 44.99,
+      "color": "#808080",
+      "image": "./assets/image/products/unisex_casual_shoes.jpg"
+    },
+    {
+      "id": 8,
+      "name": {
+        "en": "Women's Boots",
+        "ar": "أحذية نسائية بطول الكاحل"
+      },
+      "price": 69.99,
+      "old_price": 89.99,
+      "color": "#000000",
+      "image": "./assets/image/products/womens_boots.jpg"
+    },
+    {
+      "id": 9,
+      "name": {
+        "en": "Men's Loafers",
+        "ar": "حذاء رجالي بدون رباط"
+      },
+      "price": 54.99,
+      "old_price": 69.99,
+      "color": "#D2B48C",
+      "image": "./assets/image/products/mens_loafers.jpg"
+    },
+    {
+      "id": 10,
+      "name": {
+        "en": "Women's Wedge Sandals",
+        "ar": "صنادل نسائية بكعب"
+      },
+      "price": 59.99,
+      "old_price": 79.99,
+      "color": "#000080",
+      "image": "./assets/image/products/womens_wedge_sandals.jpg"
+    }
+  ]
+}
