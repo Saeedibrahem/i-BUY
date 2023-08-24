@@ -9,70 +9,96 @@ const callBack = async (url) => {
   return await data;
 };
 // import {  } from "../products.json";
-callBack("../products.json").then((res) => {
-  const products = document.querySelector(".products-slider");
-  products.innerHTML = "";
-  res.products.forEach((product) => {
-    products.innerHTML += `
+callBack("../products.json")
+  .then((res) => {
+    const products = document.querySelector(".products-slider");
+    products.innerHTML = "";
+    res.products.forEach((product) => {
+      products.innerHTML += `
     <div class="item">
-          <div class="">
+          <div class="position-relative || imgProduct">
             <img
-              src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg"
+              src=${product.image[0]}
               alt=""
+              class="img1"
             />
+            ${
+              product.image[1]
+                ? ` <img
+            src=${product.image[1]}
+            alt=""
+            class="img2"
+          />`
+                : ` <img
+          src=${product.image[0]}
+          alt=""
+          class="img2"
+        />`
+            }
             </div>
-          <div class="">
-            <h2>Lorem ipsum dolor sit.</h2>
+          <div class="product__info">
+          <div class="position-relative">
+          <span class="hint--top hint--medium position-absolute w-100 z-1 hintPos"  aria-label="${product.name.ar}">
+          <span class="opacity-0">${
+            product.name.ar
+
+          }</span>
+          </span>
+             <h3 class="overLap">${product.name.ar}</h3>
+          </div>
             <p>
-              <span class="old__price">$45</span
-              ><span class="new__price">$45</span>
+            <span class="new__price">$${product.price}</span>
+            <span class="old__price">$${product.old_price}</span>
             </p>
             <div class="colors">
-              <div style="background-color: blue;" class="black__color"></div>
-              <div style="background-color: blue;" class="black__color"></div>
-              <div style="background-color: blue;" class="black__color"></div>
-              <div style="background-color: blue;" class="black__color"></div>
-            </div>
+            ${product.colors
+              .map(
+                (color) =>
+                  ` <div style="background-color: ${color};" class="black__color"></div>`
+              )
+              .join("")}
+              </div>
           </div>
         </div>
     
     `;
-  });
-}).then(r=>{
+    });
+  })
+  .then((r) => {
     $(".owl-carousel.products-slider").owlCarousel({
-        loop: true,
-        rtl: true,
-        autoplay: true,
-        margin: 10,
-        autoplayTimeout: 5000,
-        nav: true,
-        navText: [
-          '<i class="fas fa-chevron-left"></i>',
-          '<i class="fas fa-chevron-right"></i>',
-        ],
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 3,
-          },
-          800: {
-            items: 4,
-          },
-          950: {
-            items: 5,
-          },
-          1100: {
-            items: 5,
-          },
-          1150: {
-            items: 5,
-          },
+      loop: true,
+      rtl: true,
+      // autoplay: true,
+      margin: 10,
+      // autoplayTimeout: 5000,
+      // stagePadding:5,
+      nav: true,
+      navText: [
+        '<i class="fas fa-chevron-left"></i>',
+        '<i class="fas fa-chevron-right"></i>',
+      ],
+      responsive: {
+        0: {
+          items: 2,
         },
-      });
-}
-  );
+        600: {
+          items: 4,
+        },
+        800: {
+          items: 4,
+        },
+        950: {
+          items: 5,
+        },
+        1100: {
+          items: 5,
+        },
+        1150: {
+          items: 5,
+        },
+      },
+    });
+  });
 
 //     .then((res) => {
 //         const card__container = document.querySelector(".card__container");
