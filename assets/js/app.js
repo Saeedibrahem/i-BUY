@@ -1,3 +1,5 @@
+import { products } from "./products.js";
+console.log(products);
 const callBack = async (url) => {
   let data = null;
   try {
@@ -8,7 +10,6 @@ const callBack = async (url) => {
   }
   return await data;
 };
-// import {  } from "../products.json";
 callBack("../products.json")
   .then((res) => {
     const products = document.querySelector(".products-slider");
@@ -38,13 +39,12 @@ callBack("../products.json")
             </div>
           <div class="product__info">
           <div class="position-relative">
-          <span class="hint--top hint--medium position-absolute w-100 z-1 hintPos"  aria-label="${product.name.ar}">
-          <span class="opacity-0">${
+          <span class="hint--top hint--medium position-absolute w-100 z-1 hintPos"  aria-label="${
             product.name.ar
-
-          }</span>
+          }">
+          <span class="opacity-0">${product.name.ar}</span>
           </span>
-             <h3 class="overLap">${product.name.ar}</h3>
+            <h3 class="overLap">${product.name.ar}</h3>
           </div>
             <p>
             <span class="new__price">$${product.price}</span>

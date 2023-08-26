@@ -508,13 +508,13 @@ body {
   background-size: cover;
   height: 100%;
 }
-.login__email-input {
+.login__inputs {
   border: 1px solid var(--border-color);
   border-radius: 2px;
   gap: 0.5rem;
   position: relative;
 }
-.login__email-input .input__icon {
+.login__inputs .input__icon {
   background-color: #efefee;
   color: #545554;
   width: 40px;
