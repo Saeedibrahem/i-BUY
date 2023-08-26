@@ -33,9 +33,13 @@
       </div>
       <div class="navList-container">
         <ul class="nav__list d-flex gap-3">
-          <li>
+          <li class="loginBtn">
             <i class="fa-regular fa-user"></i>
             <a data-id="login" class="popup-event">تسجيل الدخول</a>
+          </li>
+          <li class="myUser">
+            <i class="fa-regular fa-user"></i>
+            <a data-id="login" class="logOut ">حسابي</a>
           </li>
           <li>
             <i class="fa-regular fa-heart"></i>
@@ -166,20 +170,20 @@
         <div class="row ">
           <div class="col-3 login-img"></div>
           <div class="col">
-            <form action="">
+            <form action="" class="active">
 
-            <div class="flex-grow-1 p-3 ">
-              <div class="login-title d-flex justify-content-center gap-2 ">
-                <button class="btn btn-info " style="width: 50%;">تسجيل الدخول</button>
-                <button class="btn btn-info " style="width: 50%;">حساب جديد</button>
+            <div class="flex-grow-1 p-3 gap-4 d-flex flex-column">
+              <div class="login-title d-flex justify-content-center  mt-3">
+                <button type="button" class="btn btn-dark " >تسجيل الدخول</button>
+                <button type="button" class="btn btn-light " >حساب جديد</button>
               </div>
-              <div class="">
+              <div class="login-cont">
 
-                <div class="login__inputs d-flex ">
-                  <div class="input__icon">
+                <div class="login__inputs d-flex mb-4">
+                  <div class="input__icon ">
                     <i class="fa-solid fa-user-plus"></i>
                   </div>
-                  <input type="email" placeholder="البريد الإلكتروني" class="flex-grow-1 border-0" />
+                  <input type="email" required name="email" placeholder="البريد الإلكتروني" class="flex-grow-1 border-0 " />
                 </div>
                 <div class="login__inputs d-flex ">
                   <div class="input__icon">
@@ -187,7 +191,7 @@
                     <i class="fa-regular fa-eye show-pass"></i>
                     <i class="fa-regular fa-eye-slash unshow-pass"></i>
                   </div>
-                  <input type="password" placeholder="كلمة المرور" class="flex-grow-1 border-0" />
+                  <input name="password" required type="password" placeholder="كلمة المرور" class="flex-grow-1 border-0" />
                 </div>
               </div>
               <div class="remper__password d-flex gap-3 justify-content-between">
@@ -195,15 +199,15 @@
                 <span> <input type="checkbox"> تذكرني</span>
               </div>
               <div class="submit__btn d-flex">
-                <button type="submit" class="flex-grow-1 border-0">تسجيل الدخول</button>
+                <button type="submit" class="flex-grow-1 border-0 btn btn-dark" id="submit__btn">تسجيل الدخول</button>
+                <button type="submit" class="flex-grow-1 border-0 btn btn-dark">حساب جديد</button>
               </div>
-              <div class="d-flex">
-                <div class="d-flex flex-grow-1 text-center">
-                  <span>أو سجل الدخول بإستخدام</span>
+              <div class="d-flex flex-column ">
+                <div class="text-center login-line"> <span>أو سجل الدخول بإستخدام</span>
                 </div>
-                <div class="d-flex flex-grow-1">
-                  <div class=""><span>Google</span></div>
-                  <div class=""><span>Facebook</span></div>
+                <div class="d-flex justify-content-center align-content-center gap-2 || register-with">
+                  <div class="btn btn-danger"><span >Google</span></div>
+                  <div class="btn btn-primary"><span>Facebook</span></div>
                 </div>
               </div>
             </div>
@@ -420,7 +424,7 @@
 
 
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/app.js" type="module"></script>
+  <script src="./assets/js/app.js" ></script>
   <script src="./assets/js/jquery.min.js"></script>
   <script src="./assets/js/owl.carousel.min.js"></script>
   <script>

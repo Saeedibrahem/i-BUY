@@ -1,5 +1,4 @@
-import { products } from "./products.js";
-console.log(products);
+// import { products } from "./products.js";
 const callBack = async (url) => {
   let data = null;
   try {
@@ -133,6 +132,11 @@ callBack("../products.json")
 // }
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".loading").classList.add("done");
+  if (JSON.parse(localStorage.getItem("login"))) {
+    document.querySelector("body").classList.add("isLogin");
+  } else {
+    document.querySelector("body").classList.remove("isLogin");
+  }
 });
 // const toggleMenu = document.querySelector(".navbar__toggle-menu");
 // const modalContainer = document.querySelector(".modal-container");
@@ -166,4 +170,58 @@ document.addEventListener("keydown", (event) => {
     closeModal("menu");
     closeModal("login");
   }
+});
+
+const loginBtn = document.querySelector(".login-title button:nth-child(1)");
+const registerBtn = document.querySelector(".login-title button:nth-child(2)");
+const loginForm = document.querySelector(".box__container form");
+const userData = JSON.parse(localStorage.getItem("userData")) ?? [];
+
+loginBtn.addEventListener("click", () => {
+  loginForm.classList.add("active");
+  registerBtn.classList.add("btn-light");
+  registerBtn.classList.remove("btn-dark");
+  loginBtn.classList.add("btn-dark");
+});
+registerBtn.addEventListener("click", () => {
+  loginForm.classList.remove("active");
+  loginBtn.classList.remove("btn-dark");
+  loginBtn.classList.add("btn-light");
+  registerBtn.classList.add("btn-dark");
+});
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (e.target.classList.contains("active")) {
+    const findme = userData.find((ele) => ele.email === e.target.email.value);
+    console.log(findme);
+    if (findme) {
+      if (findme.password === e.target.password.value) {
+        localStorage.setItem("login", JSON.stringify(findme));
+        closeModal("login");
+        document.querySelector("body").classList.add("isLogin");
+      }
+    }
+  } else {
+    let newUser = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
+    const findme = userData.find((e) => e.email === newUser.email);
+    if (!findme) {
+      userData.push(newUser);
+      localStorage.setItem("userData", JSON.stringify(userData));
+      loginForm.classList.add("active");
+      registerBtn.classList.add("btn-light");
+      registerBtn.classList.remove("btn-dark");
+      loginBtn.classList.add("btn-dark");
+      e.target.email.value = "";
+      e.target.password.value = "";
+    }
+  }
+});
+
+document.querySelector(".logOut").addEventListener("click", () => {
+  localStorage.removeItem("login");
+  document.querySelector("body").classList.remove("isLogin");
 });
