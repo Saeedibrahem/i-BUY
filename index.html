@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saeed Ebrahim</title>
+  <title>i-Buy-Saeed Ebrahim </title>
   <link rel="stylesheet" href="./assets/css/all.min.css" />
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./assets/css/main.css" />
@@ -20,7 +20,7 @@
   <div class="navBar__container">
     <div class="navbar container">
       <div class="navBar__rightSide d-flex">
-        <div class="navbar__toggle-menu d-flex popup-event" data-id="menu">
+        <div class="navbar__toggle-menu d-flex popup-event" data-id="category__menu">
           <i class="fa-solid fa-bars-staggered"></i>
         </div>
         <div class="logo">
@@ -33,21 +33,21 @@
       </div>
       <div class="navList-container">
         <ul class="nav__list d-flex gap-3">
-          <li class="loginBtn">
+          <li class="loginBtn popup-event py-2" data-id="login" >
             <i class="fa-regular fa-user"></i>
-            <a data-id="login" class="popup-event">تسجيل الدخول</a>
+            <a>تسجيل الدخول</a>
           </li>
-          <li class="myUser">
+          <li class="myUser logOut py-2" data-id="login" >
             <i class="fa-regular fa-user"></i>
-            <a data-id="login" class="logOut ">حسابي</a>
+            <a >حسابي</a>
           </li>
-          <li>
-            <i class="fa-regular fa-heart"></i>
+          <li class="py-2">
+            <i class="fa-regular fa-heart "></i>
             <a href="#">المفضلة</a>
           </li>
-          <li>
+          <li class=" py-2">
             <i class="fa-solid fa-cart-shopping"></i>
-            <a href="#">عربة التسوق</a>
+            <a href="#" data-id="cart__menu" class="popup-event">عربة التسوق</a>
           </li>
         </ul>
       </div>
@@ -56,7 +56,7 @@
   <div class="new__navList-container">
     <div class="row w-100 g-0 align-items-center">
       <div class="col p-3">
-        <div class="res_icon d-grid text-center">
+        <div class="res_icon text-center">
           <div class="">
             <i class="fa-solid fa-house"></i>
           </div>
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="col p-3">
-        <div class="res_icon d-grid text-center popup-event" data-id="menu">
+        <div class="res_icon text-center popup-event" data-id="category__menu">
           <div class="">
             <i class="fa-solid fa-bars-staggered"></i>
           </div>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="col p-3">
-        <div class="res_icon d-grid text-center popup-event" data-id="login">
+        <div class="res_icon text-center popup-event" data-id="login">
           <div class="">
             <i class="fa-regular fa-user"></i>
           </div>
@@ -80,7 +80,7 @@
         </div>
       </div>
       <div class="col p-3">
-        <div class="res_icon d-grid text-center">
+        <div class="res_icon text-center">
           <div class="">
             <i class="fa-regular fa-heart"></i>
           </div>
@@ -88,7 +88,7 @@
         </div>
       </div>
       <div class="col p-3">
-        <div class="res_icon d-grid text-center">
+        <div class="res_icon  text-center popup-event" data-id="cart__menu">
           <div class="">
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
@@ -100,7 +100,7 @@
   <section class="slider-section">
     <div class="owl-carousel owl-theme first-slider">
       <div class="item">
-        <img src="./assets/images/Slides-PC-06.jpg" alt="" />
+        <img src="./assets/images/Slides-PC-06.jpg " srcset="./assets/" alt="" />
       </div>
       <div class="item">
         <img src="./assets/images/Slides-PC-05.jpg" alt="" />
@@ -397,8 +397,35 @@
 
 
 
-  <div class="modal-container" id="menu">
-    <div class="overlay" onclick="closeModal('menu')"></div>
+  <div class="modal-container" id="category__menu">
+    <div class="overlay" onclick="closeModal('category__menu')"></div>
+    <div class="side-modal">
+      <div class="d-flex flex-column p-4">
+        <div class="close__icon d-flex justify-content-center align-items-center" onclick="closeModal('category__menu')">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="logo pb-3">
+          <img src="./assets/images/ibuy-logo.png" alt="" width="90px" />
+        </div>
+        <div class="side__menu-category">
+          <ul class="gap-3 d-flex flex-column">
+            <li><a href="">جميع المنتجات</a></li>
+            <li><a href="">أحذية رجالي</a></li>
+            <li><a href="">صندل وسليبر</a></li>
+            <li><a href="">إكسسوارات</a></li>
+            <li><a href="">أحذية نسائية</a></li>
+            <li><a href="">أحذية أطفالي</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  <div class="modal-container" id="cart__menu">
+    <div class="overlay" onclick="closeModal('cart__menu')"></div>
     <div class="side-modal">
       <div class="d-flex flex-column p-4">
         <div class="close__icon d-flex justify-content-center align-items-center" onclick="closeModal('menu')">
@@ -424,7 +451,7 @@
 
 
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/app.js" ></script>
+  <script src="./assets/js/app.js"></script>
   <script src="./assets/js/jquery.min.js"></script>
   <script src="./assets/js/owl.carousel.min.js"></script>
   <script>
@@ -440,7 +467,7 @@
         '<i class="fas fa-chevron-right"></i>',
       ],
       responsive: {
-        600: {
+        0: {
           items: 1,
         },
       },
