@@ -29,21 +29,18 @@ ul {
   max-width: 64rem !important;
 }
 
-
-.myUser{
+.myUser {
   display: none;
 }
-.isLogin  .myUser{
-display: block;
-}
-.loginBtn{
+.isLogin .myUser {
   display: block;
 }
-.isLogin .loginBtn{
+.loginBtn {
+  display: block;
+}
+.isLogin .loginBtn {
   display: none;
 }
-
-
 
 /* -------------------------header-start------------------------------------ */
 .navBar__container {
@@ -141,13 +138,13 @@ display: block;
   border-top: 1px solid rgba(153, 153, 153, 0.5);
   display: none;
 }
-.res_icon div:nth-of-type(2){
-font-size: 10px !important;
-font-weight: bold;
-color: var(--span-font-color);
+.res_icon div:nth-of-type(2) {
+  font-size: 10px !important;
+  font-weight: bold;
+  color: var(--span-font-color);
 }
-.res_icon div:nth-of-type(1){
-  color:var(--font-color);
+.res_icon div:nth-of-type(1) {
+  color: var(--font-color);
 }
 /* ----------------------------side-menu-------------------------- */
 .overlay {
@@ -276,7 +273,10 @@ body {
   border: 1px solid rgba(200, 200, 200, 0.6) !important;
   background-color: rgba(224, 224, 224, 0.6) !important;
 }
-
+.img-sm {
+  min-height: 580px;
+  object-fit: cover !important;
+}
 /* -------------------------slider-end------------------------------------ */
 .category__section {
   padding: 32px 24px;
@@ -293,7 +293,7 @@ body {
   border: 1px solid var(--border-color);
 }
 
-.offer__span{
+.offer__span {
   min-height: 0;
   min-width: 0;
   padding: 0.5em 1em;
@@ -308,9 +308,9 @@ body {
   background-color: var(--second-color);
   color: var(--main-color);
   font-size: 0.857em;
-  z-index: 9;  
+  z-index: 9;
 }
-.span .onSale{
+.span .onSale {
   top: 6px;
   right: 6px;
   left: auto;
@@ -591,8 +591,14 @@ form.active .remper__password {
   .new__navList-container {
     display: flex;
   }
+  .new__navList-container.pop {
+    padding-left: 17px;
+  }
   .owl-nav {
     height: 40px;
+  }
+  .category__items {
+    display: flex;
   }
   .owl-theme .owl-nav button {
     height: 40px !important;
@@ -630,4 +636,37 @@ form.active .remper__password {
 }
 .hintPos {
   inset: 0;
+}
+.timer {
+  display: flex;
+  background-color: var(--second-color);
+  color: var(--main-color);
+  padding: 5px;
+  border-radius: 9px;
+  text-align: center;
+  font-weight: bolder;
+}
+.search__prodcut {
+  background-color: var(--main-color);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-height: 350px;
+  overflow-y: auto;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 99999;
+  border-radius: 9px;
+  padding: 20px;
+}
+.search__prodcut.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.hoverMeNowHot {
+  padding: 10px;
+  cursor: pointer;
+}
+.hoverMeNowHot:hover {
+  background: #f0f0f078;
 }

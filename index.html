@@ -1,224 +1,331 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>i-Buy-Saeed Ebrahim</title>
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/css/hint.min.css" />
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>i-Buy-Saeed Ebrahim </title>
-  <link rel="stylesheet" href="./assets/css/all.min.css" />
-  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./assets/css/main.css" />
-  <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./assets/css/hint.min.css" />
-  <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
-</head>
-
-<body>
-  <div class="d-flex loading">
-    <i class="fa-solid fa-spinner spin"></i>
-  </div>
-  <div class="navBar__container">
-    <div class="navbar container">
-      <div class="navBar__rightSide d-flex">
-        <div class="navbar__toggle-menu d-flex popup-event" data-id="category__menu">
-          <i class="fa-solid fa-bars-staggered"></i>
-        </div>
-        <div class="logo">
-          <img src="./assets/images/ibuy-logo.png " class="w-100" alt="logo" />
-        </div>
-        <div class="searchbar header_searchbar">
-          <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <input type="search" placeholder="إبحث هنا عن أى شئ تريده..." />
-        </div>
-      </div>
-      <div class="navList-container">
-        <ul class="nav__list d-flex gap-3">
-          <li class="loginBtn popup-event py-2" data-id="login" >
-            <i class="fa-regular fa-user"></i>
-            <a>تسجيل الدخول</a>
-          </li>
-          <li class="myUser logOut py-2" data-id="login" >
-            <i class="fa-regular fa-user"></i>
-            <a >حسابي</a>
-          </li>
-          <li class="py-2">
-            <i class="fa-regular fa-heart "></i>
-            <a href="#">المفضلة</a>
-          </li>
-          <li class=" py-2">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <a href="#" data-id="cart__menu" class="popup-event">عربة التسوق</a>
-          </li>
-        </ul>
-      </div>
+  <body>
+    <div class="d-flex loading">
+      <i class="fa-solid fa-spinner spin"></i>
     </div>
-  </div>
-  <div class="new__navList-container">
-    <div class="row w-100 g-0 align-items-center">
-      <div class="col p-3">
-        <div class="res_icon text-center">
-          <div class="">
-            <i class="fa-solid fa-house"></i>
-          </div>
-          <div class="lh-1">الرئيسية</div>
-        </div>
-      </div>
-      <div class="col p-3">
-        <div class="res_icon text-center popup-event" data-id="category__menu">
-          <div class="">
+    <div class="navBar__container">
+      <div class="navbar container">
+        <div class="navBar__rightSide d-flex">
+          <div
+            class="navbar__toggle-menu d-flex popup-event"
+            data-id="category__menu"
+          >
             <i class="fa-solid fa-bars-staggered"></i>
           </div>
-          <div class="lh-1">الأقسام</div>
-        </div>
-      </div>
-      <div class="col p-3">
-        <div class="res_icon text-center popup-event" data-id="login">
-          <div class="">
-            <i class="fa-regular fa-user"></i>
+          <div class="logo">
+            <img
+              src="./assets/images/ibuy-logo.png "
+              class="w-100"
+              alt="logo"
+            />
           </div>
-          <div class="lh-1">حسابي</div>
-        </div>
-      </div>
-      <div class="col p-3">
-        <div class="res_icon text-center">
-          <div class="">
-            <i class="fa-regular fa-heart"></i>
+          <div class="searchbar header_searchbar position-relative">
+            <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="إبحث هنا عن أى شئ تريده..."
+            />
+            <div class="search__prodcut hidden"></div>
           </div>
-          <div class="lh-1">المفضلة</div>
         </div>
-      </div>
-      <div class="col p-3">
-        <div class="res_icon  text-center popup-event" data-id="cart__menu">
-          <div class="">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-          <div class="lh-1">السلة</div>
+        <div class="navList-container">
+          <ul class="nav__list d-flex gap-3">
+            <li class="loginBtn popup-event py-2" data-id="login">
+              <i class="fa-regular fa-user"></i>
+              <a>تسجيل الدخول</a>
+            </li>
+            <li class="myUser logOut py-2" data-id="login">
+              <i class="fa-regular fa-user"></i>
+              <a>حسابي</a>
+            </li>
+            <li class="py-2">
+              <i class="fa-regular fa-heart"></i>
+              <a href="#">المفضلة</a>
+            </li>
+            <li class="py-2">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <a href="#" data-id="cart__menu" class="popup-event"
+                >عربة التسوق</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-  <section class="slider-section">
-    <div class="owl-carousel owl-theme first-slider">
-      <div class="item">
-        <img src="./assets/images/Slides-PC-06.jpg " srcset="./assets/" alt="" />
-      </div>
-      <div class="item">
-        <img src="./assets/images/Slides-PC-05.jpg" alt="" />
-      </div>
-      <div class="item">
-        <img src="./assets/images/Slides-PC-02.jpg" alt="" />
-      </div>
-      <div class="item">
-        <img src="./assets/images/Slides-PC-04.jpg" alt="" />
-      </div>
-    </div>
-  </section>
-  <section class="info d-flex justify-content-center">
-    <div class="container m-5">
-      <div class="row g-0">
-        <div class="col-lg-3 col-md-6 p-2">
-          <div class="d-flex gap-2 align-items-center box-container">
-            <div class="">
-              <img src="./assets/images/feature-3.png.png" alt="" width="50px" />
-            </div>
-            <div class="m-1">
-              <h2 class="m-1">شحن سريع</h2>
-              <p class="m-0"> سعر شحن موحد لجميع المحافظات ويصلك في أقل من 72 ساعة </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 p-2">
-          <div class="d-flex gap-2 align-items-center box-container">
-            <div class="">
-              <img src="./assets/images/quality-badge-1.png" alt="" width="50px" />
-            </div>
-            <div class="m-1">
-              <h2 class="m-1">ضمان الجودة</h2>
-              <p class="m-0"> خامات عالية الجودة ومرونه فى طلبات الاستبدال والاسترجاع </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 p-2">
-          <div class="d-flex gap-2 align-items-center box-container">
-            <div class="">
-              <img src="./assets/images/feature-1.png.png" alt="" width="50px" />
-            </div>
-            <div class="m-1">
-              <h2 class="m-1">دعم فني</h2>
-              <p class="m-0"> دعم فني على مدار اليوم للإجابة على اي استفسار لديك </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 p-2">
-          <div class="d-flex gap-2 align-items-center box-container">
-            <div class="">
-              <img src="./assets/images/feature-2.png.png" alt="" width="50px" />
-            </div>
-            <div class="m-1">
-              <h2 class="m-1">استبدال سهل</h2>
-              <p class="m-0"> يمكنك استبدال واسترجاع المنتج في حالة عدم مطابقة المواصفات. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="login__section-container" id="login">
-    <div class="overlay" onclick="closeModal('login')"></div>
-    <div class="center-content">
-      <div class="box__container">
-        <div class="row ">
-          <div class="col-3 login-img"></div>
-          <div class="col">
-            <form action="" class="active">
 
-            <div class="flex-grow-1 p-3 gap-4 d-flex flex-column">
-              <div class="login-title d-flex justify-content-center  mt-3">
-                <button type="button" class="btn btn-dark " >تسجيل الدخول</button>
-                <button type="button" class="btn btn-light " >حساب جديد</button>
-              </div>
-              <div class="login-cont">
-
-                <div class="login__inputs d-flex mb-4">
-                  <div class="input__icon ">
-                    <i class="fa-solid fa-user-plus"></i>
-                  </div>
-                  <input type="email" required name="email" placeholder="البريد الإلكتروني" class="flex-grow-1 border-0 " />
-                </div>
-                <div class="login__inputs d-flex ">
-                  <div class="input__icon">
-                    <i class="fa-solid fa-key"></i>
-                    <i class="fa-regular fa-eye show-pass"></i>
-                    <i class="fa-regular fa-eye-slash unshow-pass"></i>
-                  </div>
-                  <input name="password" required type="password" placeholder="كلمة المرور" class="flex-grow-1 border-0" />
-                </div>
-              </div>
-              <div class="remper__password d-flex gap-3 justify-content-between">
-                <a href="">نسيت كلمة المرور ؟</a>
-                <span> <input type="checkbox"> تذكرني</span>
-              </div>
-              <div class="submit__btn d-flex">
-                <button type="submit" class="flex-grow-1 border-0 btn btn-dark" id="submit__btn">تسجيل الدخول</button>
-                <button type="submit" class="flex-grow-1 border-0 btn btn-dark">حساب جديد</button>
-              </div>
-              <div class="d-flex flex-column ">
-                <div class="text-center login-line"> <span>أو سجل الدخول بإستخدام</span>
-                </div>
-                <div class="d-flex justify-content-center align-content-center gap-2 || register-with">
-                  <div class="btn btn-danger"><span >Google</span></div>
-                  <div class="btn btn-primary"><span>Facebook</span></div>
-                </div>
-              </div>
+    <div class="new__navList-container">
+      <div class="row w-100 g-0 align-items-center">
+        <div class="col p-3">
+          <div class="res_icon text-center">
+            <div class="">
+              <i class="fa-solid fa-house"></i>
             </div>
-          </form>
+            <div class="lh-1">الرئيسية</div>
+          </div>
+        </div>
+        <div class="col p-3">
+          <div
+            class="res_icon text-center popup-event"
+            data-id="category__menu"
+          >
+            <div class="">
+              <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+            <div class="lh-1">الأقسام</div>
+          </div>
+        </div>
+        <div class="col p-3">
+          <div class="res_icon text-center popup-event" data-id="login">
+            <div class="">
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="lh-1">حسابي</div>
+          </div>
+        </div>
+        <div class="col p-3">
+          <div class="res_icon text-center">
+            <div class="">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+            <div class="lh-1">المفضلة</div>
+          </div>
+        </div>
+        <div class="col p-3">
+          <div class="res_icon text-center popup-event" data-id="cart__menu">
+            <div class="">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="lh-1">السلة</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- <div class="container">
+    <section class="slider-section">
+      <div class="owl-carousel owl-theme first-slider">
+        <div class="item">
+          <img
+            class="img-lg || d-none d-sm-block"
+            src="./assets/images/Slides-PC-06.jpg "
+            alt=""
+          />
+          <img
+            class="img-sm || d-block d-sm-none"
+            src="./assets/images/Slides-Mobile-02.png"
+            alt=""
+          />
+        </div>
+        <div class="item">
+          <img
+            class="img-lg || d-none d-sm-block"
+            src="./assets/images/Slides-PC-05.jpg"
+            alt=""
+          />
+          <img
+            class="img-sm || d-block d-sm-none"
+            src="./assets/images/Slides-Mobile-04.jpg"
+            alt=""
+          />
+        </div>
+        <div class="item">
+          <img
+            class="img-lg || d-none d-sm-block"
+            src="./assets/images/Slides-PC-02.jpg"
+            alt=""
+          />
+          <img
+            class="img-sm || d-block d-sm-none"
+            src="./assets/images/Slides-Mobile-05.jpg"
+            alt=""
+          />
+        </div>
+        <div class="item">
+          <img
+            class="img-lg || d-none d-sm-block"
+            src="./assets/images/Slides-PC-04.jpg"
+            alt=""
+          />
+          <img
+            class="img-sm || d-block d-sm-none"
+            src="./assets/images/Slides-Mobile-06.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+    <section class="info d-flex justify-content-center">
+      <div class="container m-5">
+        <div class="row g-0">
+          <div class="col-lg-3 col-md-6 p-2">
+            <div class="d-flex gap-2 align-items-center box-container">
+              <div class="">
+                <img
+                  src="./assets/images/feature-3.png.png"
+                  alt=""
+                  width="50px"
+                />
+              </div>
+              <div class="m-1">
+                <h2 class="m-1">شحن سريع</h2>
+                <p class="m-0">
+                  سعر شحن موحد لجميع المحافظات ويصلك في أقل من 72 ساعة
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 p-2">
+            <div class="d-flex gap-2 align-items-center box-container">
+              <div class="">
+                <img
+                  src="./assets/images/quality-badge-1.png"
+                  alt=""
+                  width="50px"
+                />
+              </div>
+              <div class="m-1">
+                <h2 class="m-1">ضمان الجودة</h2>
+                <p class="m-0">
+                  خامات عالية الجودة ومرونه فى طلبات الاستبدال والاسترجاع
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 p-2">
+            <div class="d-flex gap-2 align-items-center box-container">
+              <div class="">
+                <img
+                  src="./assets/images/feature-1.png.png"
+                  alt=""
+                  width="50px"
+                />
+              </div>
+              <div class="m-1">
+                <h2 class="m-1">دعم فني</h2>
+                <p class="m-0">
+                  دعم فني على مدار اليوم للإجابة على اي استفسار لديك
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 p-2">
+            <div class="d-flex gap-2 align-items-center box-container">
+              <div class="">
+                <img
+                  src="./assets/images/feature-2.png.png"
+                  alt=""
+                  width="50px"
+                />
+              </div>
+              <div class="m-1">
+                <h2 class="m-1">استبدال سهل</h2>
+                <p class="m-0">
+                  يمكنك استبدال واسترجاع المنتج في حالة عدم مطابقة المواصفات.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="login__section-container" id="login">
+      <div class="overlay" onclick="closeModal('login')"></div>
+      <div class="center-content">
+        <div class="box__container">
+          <div class="row g-0">
+            <div class="col-3 login-img d-md-block d-none"></div>
+            <div class="col">
+              <form action="" class="active">
+                <div class="flex-grow-1 p-3 gap-4 d-flex flex-column">
+                  <div class="login-title d-flex justify-content-center mt-3">
+                    <button type="button" class="btn btn-dark">
+                      تسجيل الدخول
+                    </button>
+                    <button type="button" class="btn btn-light">
+                      حساب جديد
+                    </button>
+                  </div>
+                  <div class="login-cont">
+                    <div class="login__inputs d-flex mb-4">
+                      <div class="input__icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                      </div>
+                      <input
+                        type="email"
+                        required
+                        name="email"
+                        placeholder="البريد الإلكتروني"
+                        class="flex-grow-1 border-0"
+                      />
+                    </div>
+                    <div class="login__inputs d-flex">
+                      <div class="input__icon">
+                        <i class="fa-solid fa-key"></i>
+                        <i class="fa-regular fa-eye show-pass"></i>
+                        <i class="fa-regular fa-eye-slash unshow-pass"></i>
+                      </div>
+                      <input
+                        name="password"
+                        required
+                        type="password"
+                        placeholder="كلمة المرور"
+                        class="flex-grow-1 border-0"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="remper__password d-flex gap-3 justify-content-between"
+                  >
+                    <a href="">نسيت كلمة المرور ؟</a>
+                    <span> <input type="checkbox" /> تذكرني</span>
+                  </div>
+                  <div class="submit__btn d-flex">
+                    <button
+                      type="submit"
+                      class="flex-grow-1 border-0 btn btn-dark"
+                      id="submit__btn"
+                    >
+                      تسجيل الدخول
+                    </button>
+                    <button
+                      type="submit"
+                      class="flex-grow-1 border-0 btn btn-dark"
+                    >
+                      حساب جديد
+                    </button>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <div class="text-center login-line">
+                      <span>أو سجل الدخول بإستخدام</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-center align-content-center gap-2 || register-with"
+                    >
+                      <div class="btn btn-danger"><span>Google</span></div>
+                      <div class="btn btn-primary"><span>Facebook</span></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container">
     <div class="row g-0 card__container ">
       <div class="col-3 p-2">
         <div class="card">
@@ -237,242 +344,332 @@
       </div>
     </div>
   </div> -->
-  
-  
-  
-  <div class="category__section container">
-    <div class="category__title d-flex p-3 w-100 gap-2">
-      <h4>تسوق عبر الأقسام</h4>
-      <div class="break_line flex-grow-1">
-        <hr />
+
+    <div class="category__section container d-none d-sm-block">
+      <div class="category__title d-flex p-3 w-100 gap-2">
+        <h4>تسوق عبر الأقسام</h4>
+        <div class="break_line flex-grow-1">
+          <hr />
+        </div>
+        <button class="btn btn-outline-primary">عرض الكل</button>
       </div>
-      <button class="btn btn-outline-primary">عرض الكل</button>
+      <div class="category__items d-flex g-0">
+        <div class="category">
+          <img src="./assets/images/category/Cat-01.jpg" alt="" class="w-100" />
+        </div>
+        <div class="category">
+          <img src="./assets/images/category/Cat-02.png" alt="" class="w-100" />
+        </div>
+        <div class="category">
+          <img src="./assets/images/category/Cat-03.png" alt="" class="w-100" />
+        </div>
+        <div class="category">
+          <img src="./assets/images/category/Cat-04.png" alt="" class="w-100" />
+        </div>
+      </div>
     </div>
-    <div class="category__items d-flex g-0">
-      <div class="category">
-        <img src="./assets/images/category/Cat-01.jpg" alt="" class="w-100" />
+    <div class="container d-block d-sm-none">
+      <div class="category__title d-flex p-3 w-100 gap-2">
+        <h4>تسوق عبر الأقسام</h4>
+        <div class="break_line flex-grow-1">
+          <hr />
+        </div>
+        <button class="btn btn-outline-primary">عرض الكل</button>
       </div>
-      <div class="category">
-        <img src="./assets/images/category/Cat-02.png" alt="" class="w-100" />
-      </div>
-      <div class="category">
-        <img src="./assets/images/category/Cat-03.png" alt="" class="w-100" />
-      </div>
-      <div class="category">
-        <img src="./assets/images/category/Cat-04.png" alt="" class="w-100" />
+      <div class="owl-carousel mobileSwiper owl-theme">
+        <div class="item">
+          <img src="./assets/images/category/Cat-01.jpg" alt="" class="w-100" />
+        </div>
+        <div class="item">
+          <img src="./assets/images/category/Cat-02.png" alt="" class="w-100" />
+        </div>
+        <div class="item">
+          <img src="./assets/images/category/Cat-03.png" alt="" class="w-100" />
+        </div>
+        <div class="item">
+          <img src="./assets/images/category/Cat-04.png" alt="" class="w-100" />
+        </div>
       </div>
     </div>
-  </div>
-  <div class="product__slider container">
-    <div class="offer__product-title d-flex p-3 w-100 gap-2">
-      <h4>
-        <strong style=" border-radius: 9px; color: aliceblue"> % </strong> عروض اليوم
-      </h4>
-      <div class="break_line flex-grow-1">
-        <hr />
+    <div class="product__slider container">
+      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+        <h4>
+          <strong
+            style="border-radius: 9px; color: aliceblue; background-color: red"
+          >
+            %
+          </strong>
+          عروض اليوم
+        </h4>
+        <div class="break_line flex-grow-1">
+          <hr />
+        </div>
+        <div class="timer"></div>
       </div>
-      <button class="btn btn-outline-primary">عرض الكل</button>
-    </div>
-    <div class="owl-carousel products-slider owl-theme">
-      <div class="item">
-        <div class="">
-          <img src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg" />
-          <!-- <img
+      <div class="owl-carousel products-slider owl-theme">
+        <div class="item">
+          <div class="">
+            <img
+              src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg"
+            />
+            <!-- <img
               src="./assets/images/products/Brm-35-Black-web-300x300.jpg" />
             <img
               src="./assets/images/products/Brm-35-Black-web-300x300.jpg" /> -->
-        </div>
-        <div class="">
-          <h2>Lorem ipsum dolor sit.</h2>
-          <p>
-            <span class="old__price">$45</span>
-            <span class="new__price">$45</span>
-          </p>
-          <div class="colors">
-            <div style="background-color: blue" class="black__color"></div>
-            <div style="background-color: blue" class="black__color"></div>
-            <div style="background-color: blue" class="black__color"></div>
-            <div style="background-color: blue" class="black__color"></div>
+          </div>
+          <div class="">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>
+              <span class="old__price">$45</span>
+              <span class="new__price">$45</span>
+            </p>
+            <div class="colors">
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="day__offer-img">
-    <img src="./assets/images/day-offer.jpg" alt="" class="w-100" />
-  </div>
-  <div class="product__slider container">
-    <div class="offer__product-title d-flex p-3 w-100 gap-2">
-      <h4>الأكثر مبيعاً</h4>
-      <div class="break_line flex-grow-1">
-        <hr />
+    <div class="product__slider container">
+      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+        <h4>
+          <strong style="border-radius: 9px; color: aliceblue"> % </strong> عروض
+          اليوم
+        </h4>
+        <div class="break_line flex-grow-1">
+          <hr />
+        </div>
+        <button class="btn btn-outline-primary">عرض الكل</button>
       </div>
-      <button class="btn btn-outline-primary">تسوق الآن</button>
-    </div>
-    <div class="owl-carousel products-slider owl-theme">
-      <div class="item">
-        <div class="">
-          <img src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg" />
-          <!-- <img
+      <div class="owl-carousel products-slider owl-theme">
+        <div class="item">
+          <div class="">
+            <img
+              src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg"
+            />
+            <!-- <img
               src="./assets/images/products/Brm-35-Black-web-300x300.jpg" />
             <img
               src="./assets/images/products/Brm-35-Black-web-300x300.jpg" /> -->
-        </div>
-        <div class="">
-          <h2>Lorem ipsum dolor sit.</h2>
-          <p>
-            <span class="old__price">$45</span>
-            <span class="new__price">$45</span>
-          </p>
-          <div class="colors">
-            <div style="background-color: blue" class="black__color"></div>
-            <div style="background-color: blue" class="black__color"></div>
-            <div style="background-color: blue" class="black__color"></div>
-            <div style="background-color: blue" class="black__color"></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <div class="footer__section ">
-      <div class="row g-0 footer__container container">
-        <div class="col p-2">
-          <div class=" 00000000">
-            <div class="logo__image">
-              <img src="./assets/images/ibuy-logo.png" width="100px" alt="">
-            </div>
-            <div class="footer__title">
-              <p>شركتنا هي أكبر شركة متخصصة لبيع الاحذية أونلاين وتوصيلها حتي المنزل.</p>
-            </div>
-            <div class="social__links">
-              <a href="" target="_blank">
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a href="" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
+          <div class="">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>
+              <span class="old__price">$45</span>
+              <span class="new__price">$45</span>
+            </p>
+            <div class="colors">
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
             </div>
           </div>
         </div>
-        <div class="col p-2">
-          <div class="footer__list-container">
-            <ul class="footer__list">
-              <li><a><strong>عن IBUY</strong></a></li>
-              <li><a href="">من نحن</a></li>
-              <li><a href="">تواصل معنا</a></li>
-              <li><a href="">سياسة الخصوصية</a></li>
-              <li><a href="">سياسة الإستبدال والإسترجاع</a></li>
-              <li><a href="">تتبع طلبك</a></li>
-            </ul>
+      </div>
+    </div>
+    <div class="day__offer-img">
+      <img src="./assets/images/day-offer.jpg" alt="" class="w-100" />
+    </div>
+    <div class="product__slider container">
+      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+        <h4>الأكثر مبيعاً</h4>
+        <div class="break_line flex-grow-1">
+          <hr />
+        </div>
+        <button class="btn btn-outline-primary">تسوق الآن</button>
+      </div>
+      <div class="owl-carousel products-slider owl-theme">
+        <div class="item">
+          <div class="">
+            <img
+              src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg"
+            />
+            <!-- <img
+              src="./assets/images/products/Brm-35-Black-web-300x300.jpg" />
+            <img
+              src="./assets/images/products/Brm-35-Black-web-300x300.jpg" /> -->
+          </div>
+          <div class="">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>
+              <span class="old__price">$45</span>
+              <span class="new__price">$45</span>
+            </p>
+            <div class="colors">
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+            </div>
           </div>
         </div>
-        <div class="col p-2">
-          <div class="footer__list-container">
-            <ul class="footer__list">
-              <li><a><strong>فروعنا</strong></a></li>
-              <li><a href="">فرع الإسكندرية</a></li>
-              <li><a href="">فرع طنطا</a></li>
-              <li><a href="">فرع المحلة</a></li>
-            </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="footer__section">
+        <div class="row g-0 footer__container container">
+          <div class="col p-2">
+            <div class="00000000">
+              <div class="logo__image">
+                <img src="./assets/images/ibuy-logo.png" width="100px" alt="" />
+              </div>
+              <div class="footer__title">
+                <p>
+                  شركتنا هي أكبر شركة متخصصة لبيع الاحذية أونلاين وتوصيلها حتي
+                  المنزل.
+                </p>
+              </div>
+              <div class="social__links">
+                <a href="" target="_blank">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="" target="_blank">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col p-2">
+            <div class="footer__list-container">
+              <ul class="footer__list">
+                <li>
+                  <a><strong>عن IBUY</strong></a>
+                </li>
+                <li><a href="">من نحن</a></li>
+                <li><a href="">تواصل معنا</a></li>
+                <li><a href="">سياسة الخصوصية</a></li>
+                <li><a href="">سياسة الإستبدال والإسترجاع</a></li>
+                <li><a href="">تتبع طلبك</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col p-2">
+            <div class="footer__list-container">
+              <ul class="footer__list">
+                <li>
+                  <a><strong>فروعنا</strong></a>
+                </li>
+                <li><a href="">فرع الإسكندرية</a></li>
+                <li><a href="">فرع طنطا</a></li>
+                <li><a href="">فرع المحلة</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col p-2">
+            <div class="footer__list-container">
+              <ul class="footer__list">
+                <li>
+                  <a><strong>تحتاج للمساعده ؟</strong></a>
+                </li>
+                <li><a href="">email</a></li>
+                <li>
+                  <a><strong>إشترك فى نشرتنا</strong></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="col p-2">
-          <div class="footer__list-container">
-            <ul class="footer__list">
-              <li><a><strong>تحتاج للمساعده ؟</strong></a></li>
-              <li><a href="">email</a></li>
-              <li><a><strong>إشترك فى نشرتنا</strong></a></li>
+      </div>
+    </footer>
+
+    <div class="modal-container" id="category__menu">
+      <div class="overlay" onclick="closeModal('category__menu')"></div>
+      <div class="side-modal">
+        <div class="d-flex flex-column p-4">
+          <div
+            class="close__icon d-flex justify-content-center align-items-center"
+            onclick="closeModal('category__menu')"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="logo pb-3">
+            <img src="./assets/images/ibuy-logo.png" alt="" width="90px" />
+          </div>
+          <div class="side__menu-category">
+            <ul class="gap-3 d-flex flex-column">
+              <li><a href="">جميع المنتجات</a></li>
+              <li><a href="">أحذية رجالي</a></li>
+              <li><a href="">صندل وسليبر</a></li>
+              <li><a href="">إكسسوارات</a></li>
+              <li><a href="">أحذية نسائية</a></li>
+              <li><a href="">أحذية أطفالي</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </footer>
 
-
-
-
-
-  <div class="modal-container" id="category__menu">
-    <div class="overlay" onclick="closeModal('category__menu')"></div>
-    <div class="side-modal">
-      <div class="d-flex flex-column p-4">
-        <div class="close__icon d-flex justify-content-center align-items-center" onclick="closeModal('category__menu')">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="logo pb-3">
-          <img src="./assets/images/ibuy-logo.png" alt="" width="90px" />
-        </div>
-        <div class="side__menu-category">
-          <ul class="gap-3 d-flex flex-column">
-            <li><a href="">جميع المنتجات</a></li>
-            <li><a href="">أحذية رجالي</a></li>
-            <li><a href="">صندل وسليبر</a></li>
-            <li><a href="">إكسسوارات</a></li>
-            <li><a href="">أحذية نسائية</a></li>
-            <li><a href="">أحذية أطفالي</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  
-
-  <div class="modal-container" id="cart__menu">
-    <div class="overlay" onclick="closeModal('cart__menu')"></div>
-    <div class="side-modal">
-      <div class="d-flex flex-column p-4">
-        <div class="close__icon d-flex justify-content-center align-items-center" onclick="closeModal('menu')">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="logo pb-3">
-          <img src="./assets/images/ibuy-logo.png" alt="" width="90px" />
-        </div>
-        <div class="side__menu-category">
-          <ul class="gap-3 d-flex flex-column">
-            <li><a href="">جميع المنتجات</a></li>
-            <li><a href="">أحذية رجالي</a></li>
-            <li><a href="">صندل وسليبر</a></li>
-            <li><a href="">إكسسوارات</a></li>
-            <li><a href="">أحذية نسائية</a></li>
-            <li><a href="">أحذية أطفالي</a></li>
-          </ul>
+    <div class="modal-container" id="cart__menu">
+      <div class="overlay" onclick="closeModal('cart__menu')"></div>
+      <div class="side-modal">
+        <div class="d-flex flex-column p-4">
+          <div
+            class="close__icon d-flex justify-content-center align-items-center"
+            onclick="closeModal('cart__menu')"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="logo pb-3">
+            <img src="./assets/images/ibuy-logo.png" alt="" width="90px" />
+          </div>
+          <div class="side__menu-category">
+            <ul class="gap-3 d-flex flex-column">
+              <li><a href="">جميع المنتجات</a></li>
+              <li><a href="">أحذية رجالي</a></li>
+              <li><a href="">صندل وسليبر</a></li>
+              <li><a href="">إكسسوارات</a></li>
+              <li><a href="">أحذية نسائية</a></li>
+              <li><a href="">أحذية أطفالي</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-
-  <script src="./assets/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/jquery.min.js"></script>
-  <script src="./assets/js/owl.carousel.min.js"></script>
-  <script>
-    $(".owl-carousel.first-slider").owlCarousel({
-      loop: true,
-      rtl: true,
-      autoplay: true,
-      margin: 10,
-      autoplayTimeout: 5000,
-      nav: true,
-      navText: [
-        '<i class="fas fa-chevron-left"></i>',
-        '<i class="fas fa-chevron-right"></i>',
-      ],
-      responsive: {
-        0: {
-          items: 1,
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script>
+      $(".owl-carousel.first-slider").owlCarousel({
+        loop: true,
+        rtl: true,
+        autoplay: true,
+        margin: 10,
+        autoplayTimeout: 5000,
+        nav: true,
+        navText: [
+          '<i class="fas fa-chevron-left"></i>',
+          '<i class="fas fa-chevron-right"></i>',
+        ],
+        responsive: {
+          0: {
+            items: 1,
+          },
         },
-      },
-    });
-  </script>
-</body>
-
+      });
+      $(".owl-carousel.mobileSwiper").owlCarousel({
+        loop: true,
+        rtl: true,
+        margin: 10,
+        nav: true,
+        navText: [
+          '<i class="fas fa-chevron-left"></i>',
+          '<i class="fas fa-chevron-right"></i>',
+        ],
+        responsive: {
+          0: {
+            items: 2,
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
