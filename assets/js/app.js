@@ -17,7 +17,14 @@ callBack("../products.json")
     products.innerHTML = "";
     res.products.forEach((product) => {
       products.innerHTML += `<div class="item">
-          <div class="position-relative || imgProduct">
+          <div class="position-relative || imgProduct ||product-image">
+          <div class="product-offer">وفر ${parseInt(
+            ((product.old_price - product.price) * 100) / product.old_price
+          )}%</div>
+            <div class="addToWishList">
+              <i class="fa-regular fa-heart"></i>
+              <span>إضافة للمفضلة</span>
+            </div>
             <img src=${product.image[0]}  alt=""    class="img1"/>
               ${
                 product.image[1]
@@ -35,8 +42,8 @@ callBack("../products.json")
             <h3 class="overLap">${product.name.ar}</h3>
           </div>
             <p>
-            <span class="new__price">$${product.price}</span>
-            <span class="old__price">$${product.old_price}</span>
+            <span class="new__price">${product.price} جنيه</span>
+            <span class="old__price">${product.old_price} جنيه</span>
             </p>
             <div class="colors">${product.colors
               .map(
@@ -52,10 +59,9 @@ callBack("../products.json")
     $(".owl-carousel.products-slider").owlCarousel({
       loop: true,
       rtl: true,
-      // autoplay: true,
       margin: 10,
       // autoplayTimeout: 5000,
-      // stagePadding:5,
+      stagePadding: 5,
       nav: true,
       navText: [
         '<i class="fas fa-chevron-left"></i>',
@@ -166,6 +172,7 @@ loginForm.addEventListener("submit", (e) => {
     }
   }
 });
+
 document.querySelector(".logOut").addEventListener("click", () => {
   localStorage.removeItem("login");
   document.querySelector("body").classList.remove("isLogin");
@@ -235,21 +242,19 @@ searchInput.addEventListener("keyup", () => {
   } else {
     productSearch.classList.remove("hidden");
   }
- const newData= renderedProduct.filter(
+  const newData = renderedProduct.filter(
     (asd) =>
       asd.name.ar.includes(searchInput.value) ||
       asd.name.en.includes(searchInput.value)
-      );
-      productSearch.innerHTML= ""
-      if(newData.length === 0){
-        productSearch.innerHTML= `
+  );
+  productSearch.innerHTML = "";
+  if (newData.length === 0) {
+    productSearch.innerHTML = `
         <h2>لا يوجد</h2>
-        `
-
-      }else{
-
-        newData.forEach(e=>{
-      productSearch.innerHTML+=`
+        `;
+  } else {
+    newData.forEach((e) => {
+      productSearch.innerHTML += `
       <div class=" d-flex gap-3 hoverMeNowHot align-items-center">
       <div class="img">
         <img src="${e.image[0]}" style="height: 40px;" >
@@ -258,8 +263,9 @@ searchInput.addEventListener("keyup", () => {
         <p>${e.name.ar}</p>
       </div>
       <div class="price">$${e.price}</div>
-    </div>`  })
-      }
+    </div>`;
+    });
+  }
 });
 window.addEventListener("click", (e) => {
   console.log();
@@ -270,5 +276,17 @@ window.addEventListener("click", (e) => {
       productSearch.classList.remove("hidden");
       console.log("s");
     }
+  }
+});
+
+const showPassword = document.querySelector(".show-password");
+const password = document.getElementById("password");
+showPassword.addEventListener("click", () => {
+  if (password.getAttribute("type") === "password") {
+    password.setAttribute("type", "text");
+    showPassword.classList.add("active");
+  } else {
+    password.setAttribute("type", "password");
+    showPassword.classList.remove("active");
   }
 });
