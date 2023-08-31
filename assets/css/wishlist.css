@@ -1,0 +1,59 @@
+.hero__banner {
+  background-image: url(../images/login\ image.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.banner__overlay {
+  background-color: rgba(26, 32, 44, 0.6);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.page__title {
+  z-index: 3;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.wishlist__container {
+  padding: 60px 10px;
+}
+.page__title a {
+  color: #dddddd;
+  text-decoration: underline !important;
+}
+.wishlist__box-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.product-remove {
+  width: 35px;
+}
+.product-thumbnail {
+  min-width: 100px;
+  max-width: 100%;
+  width: 100px;
+}
+.product-name {
+  width: 325px;
+}
+
+.product-price {
+  width: 285px;
+}
+.product-date {
+  width: 215px;
+}
+
+.product-stock {
+  width: 230px;
+}

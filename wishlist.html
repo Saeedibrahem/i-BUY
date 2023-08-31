@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>i-Buy-Saeed Ebrahim</title>
-    <link rel="stylesheet" href="./assets/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/css/notyf.min.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/css/product.css" />
-    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="./assets/css/hint.min.css" />
-    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i-Buy-Saeed Ebrahim</title>
+  <link rel="stylesheet" href="./assets/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/notyf.min.css" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="stylesheet" href="./assets/css/wishlist.css" />
+  <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./assets/css/hint.min.css" />
+  <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+</head>
 
   <body>
     <div class="d-flex loading">
@@ -47,25 +48,28 @@
         <div class="navList-container">
           <ul class="nav__list d-flex gap-3">
             <li class="loginBtn popup-event py-2" data-id="login">
-              <a><i class="fa-regular fa-user"></i> تسجيل الدخول</a>
+              <i class="fa-regular fa-user"></i>
+              <a>تسجيل الدخول</a>
             </li>
-            <li class="myUser py-2" data-id="login">
-              <a href="/myAccount.html"
-                ><i class="fa-regular fa-user"></i> حسابي</a
-              >
+            <li class="myUser  py-2" data-id="login">
+              <i class="fa-regular fa-user"></i>
+              <a href="/myAccount.html">حسابي</a>
             </li>
             <li class="py-2 position-relative || wishlist">
-              <a><i class="fa-regular fa-heart"></i> المفضلة </a>
+              <i class="fa-regular fa-heart"></i>
+              <a href="#">المفضلة</a>
               <span class="wishlist-counter">0</span>
             </li>
             <li class="py-2 popup-event position-relative" data-id="cart__menu">
-              <a><i class="fa-solid fa-cart-shopping"></i> عربة التسوق</a>
+              <i class="fa-solid fa-cart-shopping"></i>
+              <a href="#">عربة التسوق</a>
               <span class="wishlist-counter">0</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
+
     <div class="new__navList-container">
       <div class="row w-100 g-0 align-items-center">
         <div class="col p-3">
@@ -113,163 +117,74 @@
         </div>
       </div>
     </div>
-    <div class="container my-5">
-      <div class="product__container">
-        <!-- <div class="row g-0 gap-5 || product-box">
-          <div class="col-12 col-md-6 d-flex gap-1 || images__Con">
-            <div class="d-flex flex-column gap-1 || small__image-con">
-              <img src="./assets/images/products/1-1.jpg" alt="" height="100px" />
-              <img src="./assets/images/products/1-1.jpg" alt="" height="100px" />
-            </div>
-            <div class="product__image flex-grow-1">
-              <img src="./assets/images/products/1-1.jpg" alt="" />
-            </div>
+    <div class="hero__banner">
+      <div class="banner__overlay || clickToClose"></div>
+      <div class="container page__title">
+        <header>
+          <h1 class="entry-title">المفضلة</h1>
+          <div>
+            <a href="index.html">الرئيسية</a><span> / </span>
+            <span>المفضلة</span>
           </div>
-          <div class="col">
-            <div class="product__info " >
-             <div class="product__title my-2">
-              <h4>product name</h4>
-              <p class="price ">
-                <span class="old__price">85 جنيه</span>
-                <span class="new__price">45 جنيه</span>
-              </p>
-             </div>
-              <div class="product__color my-2">
-                <p>اللون</p>
-                <div class="d-flex gap-2">
-                  <div
-                    style="background-color: blue; height: 30px; width: 30px"
-                    class="color"
-                  ></div>
-                  <div
-                    style="background-color: blue; height: 30px; width: 30px"
-                    class="color"
-                  ></div>
-                  
-                </div>
-              </div>
-              <div class="product__size my-2">
-                <p>المقاس</p>
-                <div class="d-flex gap-2">
-                  <div class="size  ">41</div>
-                  <div class="size  ">42</div>
-                </div>
-              </div>
-              <div class="addToCart my-2">
-                <div class="d-flex gap-2 align-items-center">
-                  <div class="quantity d-flex gap-2 p-1 align-items-center ">
-                    <button class=" border-0">-</button>
-                    <p class="m-0">1</p>
-                    <button class=" border-0">+</button>
-                  </div>
-                  <div class="addToCartBtn flex-grow-1 p-2">
-                    <button class=" w-100"> إضافة إلي السلة </button>
-                  </div>
-                </div>
-                <div class="my-3">
-                  <span class="p-2 addProdToWishList">
-                    <i class="fa-regular fa-heart"></i> إضافة إلى المفضلة 
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="porduct__description my-4">
-            <div class="my-2">
-              <p class="des-title"><strong>الوصف</strong></p>
-              <p class="des-content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, magni!</p>
-            </div>
-          </div>
-        </div> -->
+        </header>
       </div>
     </div>
-
-
-    <section class="info d-flex justify-content-center">
-      <div class="container m-5">
-        <div class="row g-0">
-          <div class="col-lg-3 col-md-6 p-2">
-            <div class="d-flex gap-2 align-items-center box-container">
-              <div class="">
-                <img
-                  src="./assets/images/feature-3.png.png"
-                  alt=""
-                  width="50px"
-                />
-              </div>
-              <div class="m-1">
-                <h2 class="m-1">شحن سريع</h2>
-                <p class="m-0">
-                  سعر شحن موحد لجميع المحافظات ويصلك في أقل من 72 ساعة
-                </p>
-              </div>
+    <div class="container wishlist__container">
+      <div class="row g-0">
+        <div class="col-12 mx-auto">
+          <div class="d-flex flex-column gap-2">
+            <div class="wishlist__box-title">
+              <div class="product-remove p-3"></div>
+              <div class="product-thumbnail p-3"></div>
+              <div class="product-name p-3">الإسم</div>
+              <div class="product-price p-3">السعر</div>
+              <div class="product-date p-3">تاريخ الإضافة</div>
+              <div class="product-stock p-3">المخزون</div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 p-2">
-            <div class="d-flex gap-2 align-items-center box-container">
-              <div class="">
-                <img
-                  src="./assets/images/quality-badge-1.png"
-                  alt=""
-                  width="50px"
-                />
-              </div>
-              <div class="m-1">
-                <h2 class="m-1">ضمان الجودة</h2>
-                <p class="m-0">
-                  خامات عالية الجودة ومرونه فى طلبات الاستبدال والاسترجاع
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 p-2">
-            <div class="d-flex gap-2 align-items-center box-container">
-              <div class="">
-                <img
-                  src="./assets/images/feature-1.png.png"
-                  alt=""
-                  width="50px"
-                />
-              </div>
-              <div class="m-1">
-                <h2 class="m-1">دعم فني</h2>
-                <p class="m-0">
-                  دعم فني على مدار اليوم للإجابة على اي استفسار لديك
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 p-2">
-            <div class="d-flex gap-2 align-items-center box-container">
-              <div class="">
-                <img
-                  src="./assets/images/feature-2.png.png"
-                  alt=""
-                  width="50px"
-                />
-              </div>
-              <div class="m-1">
-                <h2 class="m-1">استبدال سهل</h2>
-                <p class="m-0">
-                  يمكنك استبدال واسترجاع المنتج في حالة عدم مطابقة المواصفات.
-                </p>
-              </div>
+            <div class="wishlist__data">
+              <!-- <div class="wishlist__box-title">
+                <div class="product-remove p-3">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </div>
+                <div class="product-thumbnail p-3">
+                  <img
+                    src="./assets/images/products/1-1.jpg"
+                    alt=""
+                    height="68px"
+                  />
+                </div>
+                <div class="product-name p-3">
+                  <a
+                    href=""
+                    class="text-danger"
+                    style="text-decoration: underline !important"
+                    >Lorem ipsum dolor sit.</a
+                  >
+                </div>
+                <div class="product-price p-3">
+                  <span class="old__price">85 جنيه </span>
+                  <span class="new__price">45 جنيه </span>
+                </div>
+                <div class="product-date p-3"><span>أغسطس 29, 2023</span></div>
+                <div class="product-stock p-3">
+                  <i class="fa-solid fa-check"></i> <span>متوفر بالمخزون</span>
+                </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
     <footer>
       <div class="footer__section">
-        <div class="row g-0 footer__container container">
+        <div class="row g-0 footer__container container ">
           <div class="col-6 col-lg-3 p-2">
             <div class="sssss">
               <div class="logo__image pb-3">
-                <img
-                  src="./assets/images/footer-logo.png"
-                  width="100px"
-                  alt=""
-                />
+                <img src="./assets/images/footer-logo.png" width="100px" alt="" />
               </div>
               <div class="footer__title">
                 <p>
@@ -322,11 +237,7 @@
                 <li>
                   <a><strong>تحتاج للمساعده ؟</strong></a>
                 </li>
-                <li>
-                  <a href="">
-                    <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a
-                  >
-                </li>
+                <li><a href=""> <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a></li>
                 <li>
                   <a><strong>إشترك فى نشرتنا</strong></a>
                 </li>
@@ -424,7 +335,7 @@
       </div>
     </div>
     <div class="modal-container" id="category__menu">
-      <div class="overlay || || clickToClose" data-id="category__menu"></div>
+      <div class="overlay || clickToClose" data-id="category__menu"></div>
       <div class="side-modal">
         <div class="d-flex flex-column p-4">
           <div
@@ -474,10 +385,12 @@
         </div>
       </div>
     </div>
+
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/wishlist.js" type="module"></script>
     <script src="./assets/js/notyf.min.js"></script>
-    <script src="./assets/js/product.js" type="module"></script>
     <script src="./assets/js/app.js"></script>
-    <!-- <script src="./assets/js/product.js" type="module"></script> -->
+
+    
   </body>
 </html>

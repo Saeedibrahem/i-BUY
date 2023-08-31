@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>i-Buy-Saeed Ebrahim</title>
     <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/notyf.min.css" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/css/hint.min.css" />
     <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
 
   <body>
@@ -45,21 +46,19 @@
         <div class="navList-container">
           <ul class="nav__list d-flex gap-3">
             <li class="loginBtn popup-event py-2" data-id="login">
-              <i class="fa-regular fa-user"></i>
-              <a>تسجيل الدخول</a>
+              <a><i class="fa-regular fa-user"></i> تسجيل الدخول</a>
             </li>
-            <li class="myUser logOut py-2" data-id="login">
-              <i class="fa-regular fa-user"></i>
-              <a>حسابي</a>
+            <li class="myUser py-2" data-id="login">
+              <a href="/myAccount.html"
+                ><i class="fa-regular fa-user"></i> حسابي</a
+              >
             </li>
-            <li class="py-2 position-relative">
-              <i class="fa-regular fa-heart"></i>
-              <a href="#">المفضلة</a>
+            <li class="py-2 position-relative || wishlist">
+              <a><i class="fa-regular fa-heart"></i> المفضلة </a>
               <span class="wishlist-counter">0</span>
             </li>
             <li class="py-2 popup-event position-relative" data-id="cart__menu">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <a href="#">عربة التسوق</a>
+              <a><i class="fa-solid fa-cart-shopping"></i> عربة التسوق</a>
               <span class="wishlist-counter">0</span>
             </li>
           </ul>
@@ -240,8 +239,219 @@
         </div>
       </div>
     </section>
+
+    
+
+    <div class="category__section container d-none d-sm-block">
+      <div class="category__title d-flex p-3 w-100 gap-2">
+        <h4>تسوق عبر الأقسام</h4>
+        <div class="break_line flex-grow-1"></div>
+        <button class="btn btn-outline-primary">عرض الكل</button>
+      </div>
+      <div class="category__items d-flex g-0">
+        <div class="category">
+          <img src="./assets/images/category/Cat-01.jpg" alt="" class="w-100" />
+        </div>
+        <div class="category">
+          <img src="./assets/images/category/Cat-02.png" alt="" class="w-100" />
+        </div>
+        <div class="category">
+          <img src="./assets/images/category/Cat-03.png" alt="" class="w-100" />
+        </div>
+        <div class="category">
+          <img src="./assets/images/category/Cat-04.png" alt="" class="w-100" />
+        </div>
+      </div>
+    </div>
+    <div class="container d-block d-sm-none">
+      <div class="category__title d-flex p-3 w-100 gap-2">
+        <h4>تسوق عبر الأقسام</h4>
+        <div class="break_line flex-grow-1"></div>
+        <button class="btn btn-outline-primary">عرض الكل</button>
+      </div>
+      <div class="owl-carousel mobileSwiper owl-theme">
+        <div class="item">
+          <img src="./assets/images/category/Cat-01.jpg" alt="" class="w-100" />
+        </div>
+        <div class="item">
+          <img src="./assets/images/category/Cat-02.png" alt="" class="w-100" />
+        </div>
+        <div class="item">
+          <img src="./assets/images/category/Cat-03.png" alt="" class="w-100" />
+        </div>
+        <div class="item">
+          <img src="./assets/images/category/Cat-04.png" alt="" class="w-100" />
+        </div>
+      </div>
+    </div>
+    <div class="product__slider container">
+      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+        <h4 class="d-flex gap-1">
+          <strong
+            style="
+              border-radius: 9px;
+              color: aliceblue;
+              background-color: var(--second-color);
+              width: fit-content;
+            "
+            class="d-block p-1"
+          >
+            %
+          </strong>
+          عروض اليوم
+        </h4>
+        <div class="break_line flex-grow-1"></div>
+        <div class="timer"></div>
+      </div>
+      <div class="owl-carousel products-slider owl-theme">
+        <!-- <div class="item">
+          <div class="">
+            <img
+              src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg"
+            />
+          </div>
+          <div class="">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>
+              <span class="old__price">$45</span>
+              <span class="new__price">$45</span>
+            </p>
+            <div class="colors">
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="day__offer-img">
+      <img src="./assets/images/day-offer.jpg" alt="" class="w-100" />
+    </div>
+    <div class="product__slider container">
+      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+        <h4>الأكثر مبيعاً</h4>
+        <div class="break_line flex-grow-1"></div>
+        <button class="btn btn-outline-primary">تسوق الآن</button>
+      </div>
+      <div class="owl-carousel products-slider owl-theme">
+        <div class="item">
+          <div class="product-image">
+            <div class="product-offer">وفر 40%</div>
+            <div class="addToWishList">
+              <i class="fa-regular fa-heart"></i>
+              <span>إضافة للمفضلة</span>
+            </div>
+            <img src="./assets/images/products/1-1.jpg" alt="ssssssssss" />
+          </div>
+          <div class="">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>
+              <span class="old__price">85 جنيه </span>
+              <span class="new__price">45 جنيه </span>
+            </p>
+            <div class="colors">
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+              <div style="background-color: blue" class="black__color"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comments__slider container product__slider">
+      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+        <h4>آراء عملاؤنا</h4>
+        <div class="break_line flex-grow-1"></div>
+        <button class="btn btn-outline-primary">تسوق الآن</button>
+      </div>
+      <div class="owl-carousel products-slider owl-theme">
+        <div class="item">good</div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer__section">
+        <div class="row g-0 footer__container container">
+          <div class="col-6 col-lg-3 p-2">
+            <div class="sssss">
+              <div class="logo__image pb-3">
+                <img
+                  src="./assets/images/footer-logo.png"
+                  width="100px"
+                  alt=""
+                />
+              </div>
+              <div class="footer__title">
+                <p>
+                  شركتنا هي أكبر شركة متخصصة لبيع الاحذية أونلاين وتوصيلها حتي
+                  المنزل.
+                </p>
+              </div>
+              <div class="social__links">
+                <a href="" target="_blank">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="" target="_blank">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 p-2">
+            <div class="footer__list-container">
+              <ul class="footer__list">
+                <li>
+                  <strong>عن IBUY</strong>
+                </li>
+                <li><a href="">من نحن</a></li>
+                <li><a href="">تواصل معنا</a></li>
+                <li><a href="">سياسة الخصوصية</a></li>
+                <li><a href="">سياسة الإستبدال والإسترجاع</a></li>
+                <li><a href="">تتبع طلبك</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 p-2">
+            <div class="footer__list-container">
+              <ul class="footer__list">
+                <li>
+                  <a><strong>فروعنا</strong></a>
+                </li>
+                <li><a href="">فرع الإسكندرية</a></li>
+                <li><a href="">فرع طنطا</a></li>
+                <li><a href="">فرع المحلة</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 p-2">
+            <div class="footer__list-container">
+              <ul class="footer__list">
+                <li>
+                  <a><strong>تحتاج للمساعده ؟</strong></a>
+                </li>
+                <li>
+                  <a href="">
+                    <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a><strong>إشترك فى نشرتنا</strong></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <div class="login__section-container" id="login">
-      <div class="overlay" onclick="closeModal('login')"></div>
+      <div class="overlay || clickToClose" data-id="login"></div>
       <div class="center-content">
         <div class="box__container">
           <div class="row g-0">
@@ -274,8 +484,8 @@
                       <div class="input__icon">
                         <i class="fa-solid fa-key"></i>
                         <div class="show-password">
-                          <i class="fa-regular fa-eye "></i>
-                          <i class="fa-regular fa-eye-slash  "></i>
+                          <i class="fa-regular fa-eye"></i>
+                          <i class="fa-regular fa-eye-slash"></i>
                         </div>
                       </div>
                       <input
@@ -327,246 +537,13 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="container">
-    <div class="row g-0 card__container ">
-      <div class="col-3 p-2">
-        <div class="card">
-          <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" class="card-img-top"
-            alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h5 class="card-price">$526</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up
-              the bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-    <div class="category__section container d-none d-sm-block">
-      <div class="category__title d-flex p-3 w-100 gap-2">
-        <h4>تسوق عبر الأقسام</h4>
-        <div class="break_line flex-grow-1">
-          <hr />
-        </div>
-        <button class="btn btn-outline-primary">عرض الكل</button>
-      </div>
-      <div class="category__items d-flex g-0">
-        <div class="category">
-          <img src="./assets/images/category/Cat-01.jpg" alt="" class="w-100" />
-        </div>
-        <div class="category">
-          <img src="./assets/images/category/Cat-02.png" alt="" class="w-100" />
-        </div>
-        <div class="category">
-          <img src="./assets/images/category/Cat-03.png" alt="" class="w-100" />
-        </div>
-        <div class="category">
-          <img src="./assets/images/category/Cat-04.png" alt="" class="w-100" />
-        </div>
-      </div>
-    </div>
-    <div class="container d-block d-sm-none">
-      <div class="category__title d-flex p-3 w-100 gap-2">
-        <h4>تسوق عبر الأقسام</h4>
-        <div class="break_line flex-grow-1">
-          <hr />
-        </div>
-        <button class="btn btn-outline-primary">عرض الكل</button>
-      </div>
-      <div class="owl-carousel mobileSwiper owl-theme">
-        <div class="item">
-          <img src="./assets/images/category/Cat-01.jpg" alt="" class="w-100" />
-        </div>
-        <div class="item">
-          <img src="./assets/images/category/Cat-02.png" alt="" class="w-100" />
-        </div>
-        <div class="item">
-          <img src="./assets/images/category/Cat-03.png" alt="" class="w-100" />
-        </div>
-        <div class="item">
-          <img src="./assets/images/category/Cat-04.png" alt="" class="w-100" />
-        </div>
-      </div>
-    </div>
-    <div class="product__slider container">
-      <div class="offer__product-title d-flex p-3 w-100 gap-2">
-        <h4>
-          <strong
-            style="border-radius: 9px; color: aliceblue; background-color: red"
-          >
-            %
-          </strong>
-          عروض اليوم
-        </h4>
-        <div class="break_line flex-grow-1">
-          <hr />
-        </div>
-        <div class="timer"></div>
-      </div>
-      <div class="owl-carousel products-slider owl-theme">
-        <div class="item">
-          <div class="">
-            <img
-              src="./assets/images/products/BRM-28-WHT-GRY-WEB-300x300.jpg"
-            />
-            <!-- <img
-              src="./assets/images/products/Brm-35-Black-web-300x300.jpg" />
-            <img
-              src="./assets/images/products/Brm-35-Black-web-300x300.jpg" /> -->
-          </div>
-          <div class="">
-            <h2>Lorem ipsum dolor sit.</h2>
-            <p>
-              <span class="old__price">$45</span>
-              <span class="new__price">$45</span>
-            </p>
-            <div class="colors">
-              <div style="background-color: blue" class="black__color"></div>
-              <div style="background-color: blue" class="black__color"></div>
-              <div style="background-color: blue" class="black__color"></div>
-              <div style="background-color: blue" class="black__color"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="day__offer-img">
-      <img src="./assets/images/day-offer.jpg" alt="" class="w-100" />
-    </div>
-    <div class="product__slider container">
-      <div class="offer__product-title d-flex p-3 w-100 gap-2">
-        <h4>الأكثر مبيعاً</h4>
-        <div class="break_line flex-grow-1">
-          <hr />
-        </div>
-        <button class="btn btn-outline-primary">تسوق الآن</button>
-      </div>
-      <div class="owl-carousel products-slider owl-theme">
-        <div class="item">
-          <div class="product-image">
-            <div class="product-offer">وفر 40%</div>
-            <div class="addToWishList">
-              <i class="fa-regular fa-heart"></i>
-              <span>إضافة للمفضلة</span>
-            </div>
-            <img src="./assets/images/products/1-1.jpg" alt="ssssssssss" />
-          </div>
-          <div class="">
-            <h2>Lorem ipsum dolor sit.</h2>
-            <p>
-              <span class="old__price">85 جنيه </span>
-              <span class="new__price">45 جنيه </span>
-            </p>
-            <div class="colors">
-              <div style="background-color: blue" class="black__color"></div>
-              <div style="background-color: blue" class="black__color"></div>
-              <div style="background-color: blue" class="black__color"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="comments__slider container product__slider">
-      <div class="offer__product-title d-flex p-3 w-100 gap-2">
-        <h4>آراء عملاؤنا</h4>
-        <div class="break_line flex-grow-1">
-          <hr />
-        </div>
-        <button class="btn btn-outline-primary">تسوق الآن</button>
-      </div>
-      <div class="owl-carousel products-slider owl-theme">
-        <div class="item">
-        good
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <div class="footer__section">
-        <div class="row g-0 footer__container container">
-          <div class="col p-2">
-            <div class="00000000">
-              <div class="logo__image">
-                <img src="./assets/images/ibuy-logo.png" width="100px" alt="" />
-              </div>
-              <div class="footer__title">
-                <p>
-                  شركتنا هي أكبر شركة متخصصة لبيع الاحذية أونلاين وتوصيلها حتي
-                  المنزل.
-                </p>
-              </div>
-              <div class="social__links">
-                <a href="" target="_blank">
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="" target="_blank">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="" target="_blank">
-                  <i class="fa-brands fa-whatsapp"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col p-2">
-            <div class="footer__list-container">
-              <ul class="footer__list">
-                <li>
-                  <a><strong>عن IBUY</strong></a>
-                </li>
-                <li><a href="">من نحن</a></li>
-                <li><a href="">تواصل معنا</a></li>
-                <li><a href="">سياسة الخصوصية</a></li>
-                <li><a href="">سياسة الإستبدال والإسترجاع</a></li>
-                <li><a href="">تتبع طلبك</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col p-2">
-            <div class="footer__list-container">
-              <ul class="footer__list">
-                <li>
-                  <a><strong>فروعنا</strong></a>
-                </li>
-                <li><a href="">فرع الإسكندرية</a></li>
-                <li><a href="">فرع طنطا</a></li>
-                <li><a href="">فرع المحلة</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col p-2">
-            <div class="footer__list-container">
-              <ul class="footer__list">
-                <li>
-                  <a><strong>تحتاج للمساعده ؟</strong></a>
-                </li>
-                <li><a href="">email</a></li>
-                <li>
-                  <a><strong>إشترك فى نشرتنا</strong></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
     <div class="modal-container" id="category__menu">
-      <div class="overlay" onclick="closeModal('category__menu')"></div>
+      <div class="overlay || || clickToClose" data-id="category__menu"></div>
       <div class="side-modal">
         <div class="d-flex flex-column p-4">
           <div
-            class="close__icon d-flex justify-content-center align-items-center"
-            onclick="closeModal('category__menu')"
+            class="close__icon d-flex justify-content-center align-items-center || clickToClose"
+            data-id="category__menu"
           >
             <i class="fa-solid fa-xmark"></i>
           </div>
@@ -588,17 +565,19 @@
     </div>
 
     <div class="modal-container" id="cart__menu">
-      <div class="overlay" onclick="closeModal('cart__menu')"></div>
-      <div class="side-modal cart-modal">
-        <div class="d-flex  flex-column">
-          <div class="cart__title d-flex flex-row ">
-            <div class="close__icon d-flex justify-content-center align-items-center"
-            onclick="closeModal('cart__menu')">
-            <i class="fa-solid fa-xmark"></i>
-           </div>
-           <div class="p-0  text-center">
-            <h3 class="m-0">سلة التسوق</h3>
-           </div>
+      <div class="overlay || clickToClose" data-id="cart__menu"></div>
+      <div class="cart-modal">
+        <div class="d-flex flex-column">
+          <div class="cart__title d-flex flex-row">
+            <div
+              class="close__icon d-flex justify-content-center align-items-center || clickToClose"
+              data-id="cart__menu"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="p-0 text-center">
+              <h3 class="m-0">سلة التسوق</h3>
+            </div>
           </div>
           <div class="cart__menu-items">
             <ul class="gap-3 d-flex flex-column">
@@ -609,9 +588,10 @@
         </div>
       </div>
     </div>
-
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/notyf.min.js"></script>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
     <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/owl.carousel.min.js"></script>
     <script>
