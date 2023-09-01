@@ -35,8 +35,22 @@
   gap: 20px;
   text-align: center;
 }
-.product-remove {
+.product-remove{
   width: 35px;
+  height: 35px;
+  
+}
+.product-remove div {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.product-remove:hover div{
+  background-color: #0000003b;
+  color: var(--second-color);
+
 }
 .product-thumbnail {
   min-width: 100px;
@@ -46,7 +60,13 @@
 .product-name {
   width: 325px;
 }
-
+.product-name a {
+  color: var(--second-color);
+  text-decoration: underline !important;
+}
+.product-name a:hover{
+  color: var(--span-font-color);
+}
 .product-price {
   width: 285px;
 }
