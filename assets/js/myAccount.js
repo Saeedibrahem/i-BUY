@@ -26,16 +26,16 @@ document.querySelector(".logOut").addEventListener("click", () => {
     location.pathname.includes("wishlist") ||
     location.pathname.includes("myAccount")
   ) {
-    let userName = JSON.parse(localStorage.getItem("login")).email.split(
-      "@"
-    )[0];
-    notyf.success(`هتوحشنا 💔${userName}`);
-    location.href = "/";
+    let userName = JSON.parse(localStorage.getItem("login")).email.split("@")[0];
+    notyf.success(`هتوحشنا 💔${user.username ? user.username : userName}`);
+    setTimeout(() => {
+      location.href = "/";
+      loggedOut();
+    }, 2000);
   }
 
-  loggedOut();
 });
-const user = JSON.parse(localStorage.getItem("login")) ?? [];
+const user = JSON.parse(localStorage.getItem("login")) ?? {};
 const userData = JSON.parse(localStorage.getItem("userData")) ?? [];
 
 const accountForm = document.getElementById("accountForm");
@@ -51,6 +51,7 @@ accountForm.addEventListener("submit", (e) => {
       userFormData.lastname = e.target.lastName.value;
     }
     if (e.target.userName.value.length !== 0) {
+      e.target.userName.value = userFormData.username;
       userFormData.username = e.target.userName.value;
       document.getElementById("userName").textContent = e.target.userName.value
     }
@@ -62,7 +63,7 @@ accountForm.addEventListener("submit", (e) => {
       e.target.userNewPass2.value.length !== 0
     ) {
       if (e.target.userNewPass.value === e.target.userNewPass2.value) {
-        userFormData.password = e.userNewPass.value;
+        userFormData.password = e.target.userNewPass.value;
         closePop(e.target);
         loggedOut();
         setTimeout(() => {
@@ -82,9 +83,8 @@ accountForm.addEventListener("submit", (e) => {
 const loggedOut = () => {
   localStorage.removeItem("login");
   document.querySelector("body").classList.remove("isLogin");
-  document
-    .querySelector(".wishlist a")
-    .removeAttribute("href", "wishlist.html");
+  document.querySelector(".wishlist a").removeAttribute("href", "wishlist.html");
+  document.querySelector(".new__wishlist a").removeAttribute("href", "wishlist.html");
   wishlistCounter.textContent = "0";
 };
 const closePop = (e) => {

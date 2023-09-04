@@ -23,6 +23,7 @@
 }
 .wishlist__container {
   padding: 60px 10px;
+  min-height: 500px;
 }
 .page__title a {
   color: #dddddd;
@@ -35,10 +36,9 @@
   gap: 20px;
   text-align: center;
 }
-.product-remove{
+.product-remove-box{
   width: 35px;
   height: 35px;
-  
 }
 .product-remove div {
   width: 35px;

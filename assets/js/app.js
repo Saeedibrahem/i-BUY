@@ -25,7 +25,8 @@ callBack("../products.json")
         products.innerHTML += `<div class="item">
         <div class="addToWishList" onclick="handleWishList(${product.id})">
           <i class="fa-regular fa-heart"></i>
-          <span>إضافة للمفضلة</span>
+          <span class="addWish d-block" >إضافة للمفضلة</span>
+          <span class="removeWish d-none" >حذف من المفضلة</span>
         </div>
         <a href="/product.html?${product.id}">
         <div class="position-relative || imgProduct ||product-image">
@@ -130,13 +131,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   } else {
     document.querySelector(".wishlist a").setAttribute("href", "login.html");
+    document
+      .querySelector(".new__wishlist a")
+      .setAttribute("href", "login.html");
     document.querySelector(".loading").classList.add("done");
     if (JSON.parse(localStorage.getItem("login"))) {
       document.querySelector("body").classList.add("isLogin");
       wishlistCounter.textContent = userWishlist.length;
-
       document
         .querySelector(".wishlist a")
+        .setAttribute("href", "wishlist.html");
+      document
+        .querySelector(".new__wishlist a")
         .setAttribute("href", "wishlist.html");
     } else {
       document.querySelector("body").classList.remove("isLogin");
@@ -146,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const loginBtn = document.querySelector(".login-title button:nth-child(1)");
 const registerBtn = document.querySelector(".login-title button:nth-child(2)");
-const loginForm = document.querySelector(".box__container form");
+const loginForm = document.querySelector("form  ");
 const userData = JSON.parse(localStorage.getItem("userData")) ?? [];
 if (loginBtn) {
   loginBtn.addEventListener("click", () => {
@@ -179,6 +185,10 @@ if (loginForm) {
           document
             .querySelector(".wishlist a")
             .setAttribute("href", "wishlist.html");
+          document
+            .querySelector(".new__wishlist a")
+            .setAttribute("href", "wishlist.html");
+
           wishlistCounter.textContent = userWishlist.length;
           clearInputValue(e);
           let userName = JSON.parse(localStorage.getItem("login")).email.split(
@@ -204,6 +214,9 @@ if (loginForm) {
         password: e.target.password.value,
       };
       const findme = userData.find((e) => e.email === newUser.email);
+      if (findme) {
+        notyf.error("هذا البريد مسجل بالفعل يرجي تسجيل الدخول");
+      }
       if (!findme) {
         userData.push(newUser);
         sendDataToLocalStorage("userData", userData);
@@ -250,6 +263,7 @@ const wishlistCounter = document.querySelector(".wishlist-counter");
 if (document.querySelector("body").classList.contains("isLogin")) {
   wishlistCounter.textContent = userWishlist.length;
 }
+// 
 const handleWishList = (id) => {
   if (document.querySelector("body").classList.contains("isLogin")) {
     const findmy = renderedProduct.find((e) => e.id === id);
@@ -259,14 +273,23 @@ const handleWishList = (id) => {
       userWishlist = userWishlist.filter((e) => e.id !== id);
       sendDataToLocalStorage("userWishlist", userWishlist);
       notyf.error("تم حذف المنتج من المفضلة");
+      wishlistCounter.textContent = userWishlist.length;
+
     } else {
       userWishlist.push(findmy);
       sendDataToLocalStorage("userWishlist", userWishlist);
       notyf.success("تم إضافة المنتج إلى المفضلة");
+      
+      wishlistCounter.textContent = userWishlist.length;
     }
-    wishlistCounter.textContent = userWishlist.length;
+  } else {
+    notyf.error("يرجي تسجيل الدخول أولاً");
+    setTimeout(() => {
+      location.href = "/login.html";
+    }, 3000);
   }
 };
+
 
 const searchInput = document.getElementById("searchInput");
 const searchBar = document.querySelector(".header_searchbar");
@@ -317,7 +340,7 @@ window.addEventListener("click", (e) => {
 });
 const showPassword = document.querySelector(".show-password");
 const password = document.getElementById("password");
-if(showPassword){
+if (showPassword) {
   showPassword.addEventListener("click", () => {
     if (password.getAttribute("type") === "password") {
       password.setAttribute("type", "text");
@@ -328,3 +351,20 @@ if(showPassword){
     }
   });
 }
+
+
+
+const body = document.querySelector("body")
+// body.addEventListener("click",e=>{
+//   if(e.target.closest(".addToWishList")){
+
+//     const addWish = e.target.closest(".addToWishList").querySelector(".addWish")
+//     const removeWish = e.target.closest(".addToWishList").querySelector(".removeWish")
+//     ssad(removeWish ,addWish )
+//   }
+// })
+// function ssad(btn1, btn2) {
+//   btn1.classList.add("d-block");
+//   btn1.classList.remove("d-none");
+//   btn2.classList.add("d-none");
+// }

@@ -27,11 +27,12 @@
             <i class="fa-solid fa-bars-staggered"></i>
           </div>
           <div class="logo">
+            <a href="/">
             <img
               src="./assets/images/ibuy-logo.png "
               class="w-100"
               alt="logo"
-            />
+            /></a>
           </div>
           <div class="searchbar header_searchbar position-relative">
             <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -70,10 +71,12 @@
       <div class="row w-100 g-0 align-items-center">
         <div class="col p-3">
           <div class="res_icon text-center">
-            <div class="">
-              <i class="fa-solid fa-house"></i>
-            </div>
-            <div class="lh-1">الرئيسية</div>
+            <a href="/">
+              <div class="nN__icon">
+                <i class="fa-solid fa-house"></i>
+              </div>
+              <div class="lh-1 nN__title">الرئيسية</div>
+            </a>
           </div>
         </div>
         <div class="col p-3">
@@ -81,34 +84,47 @@
             class="res_icon text-center popup-event"
             data-id="category__menu"
           >
-            <div class="">
+            <div class="nN__icon">
               <i class="fa-solid fa-bars-staggered"></i>
             </div>
-            <div class="lh-1">الأقسام</div>
+            <div class="lh-1 nN__title">الأقسام</div>
           </div>
         </div>
         <div class="col p-3">
-          <div class="res_icon text-center popup-event" data-id="login">
-            <div class="">
+          <div
+            class="res_icon text-center popup-event loginBtn"
+            data-id="login"
+          >
+            <div class="nN__icon">
               <i class="fa-regular fa-user"></i>
             </div>
-            <div class="lh-1">حسابي</div>
+            <div class="lh-1 nN__title">تسجيل الدخول</div>
+          </div>
+          <div class="res_icon text-center myUser">
+            <a href="/myAccount.html">
+              <div class="nN__icon">
+                <i class="fa-regular fa-user"></i>
+              </div>
+              <div class="lh-1 nN__title">حسابي</div>
+            </a>
           </div>
         </div>
         <div class="col p-3">
-          <div class="res_icon text-center">
-            <div class="">
-              <i class="fa-regular fa-heart"></i>
-            </div>
-            <div class="lh-1">المفضلة</div>
+          <div class="res_icon text-center new__wishlist">
+            <a>
+              <div class="nN__icon">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <div class="lh-1 nN__title">المفضلة</div>
+            </a>
           </div>
         </div>
         <div class="col p-3">
           <div class="res_icon text-center popup-event" data-id="cart__menu">
-            <div class="">
+            <div class="nN__icon">
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <div class="lh-1">السلة</div>
+            <div class="lh-1 nN__title">السلة</div>
           </div>
         </div>
       </div>
@@ -239,8 +255,6 @@
         </div>
       </div>
     </section>
-
-    
 
     <div class="category__section container d-none d-sm-block">
       <div class="category__title d-flex p-3 w-100 gap-2">
@@ -375,15 +389,14 @@
 
     <footer>
       <div class="footer__section">
-        <div class="row g-0 footer__container container">
-          <div class="col-6 col-lg-3 p-2">
-            <div class="sssss">
+        <div class="row g-0 footer__container container ">
+          <div class="col-6 col-lg-3   p-3">
+            <div class="footer__logo">
               <div class="logo__image pb-3">
-                <img
-                  src="./assets/images/footer-logo.png"
-                  width="100px"
-                  alt=""
-                />
+                <a href="/">
+                  <img src="./assets/images/footer-logo.png" width="100px" alt="" />
+
+                </a>
               </div>
               <div class="footer__title">
                 <p>
@@ -404,7 +417,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-lg-3 p-2">
+          <div class="col-6 col-lg-3   p-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
@@ -418,7 +431,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-6 col-lg-3 p-2">
+          <div class="col-6 col-lg-3   p-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
@@ -430,17 +443,13 @@
               </ul>
             </div>
           </div>
-          <div class="col-6 col-lg-3 p-2">
+          <div class="col-6 col-lg-3   p-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
                   <a><strong>تحتاج للمساعده ؟</strong></a>
                 </li>
-                <li>
-                  <a href="">
-                    <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a
-                  >
-                </li>
+                <li><a href=""> <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a></li>
                 <li>
                   <a><strong>إشترك فى نشرتنا</strong></a>
                 </li>

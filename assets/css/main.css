@@ -19,7 +19,6 @@
   --box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
 body {
-  /* height: 300vh; */
   position: relative;
 }
 ul {
@@ -46,7 +45,7 @@ ul {
 /* -------------------------header-start------------------------------------ */
 .navBar__container {
   border-bottom: 1px hsla(0, 0%, 60%, 0.7) solid;
-  padding: 1rem;
+  /* padding: 1rem; */
   position: sticky;
   top: 0;
   left: 0;
@@ -57,6 +56,7 @@ ul {
 .navBar__container .navbar {
   align-items: center;
   /* background-color: red; */
+  padding: 0.8rem 1rem;
   gap: 20px;
 }
 
@@ -140,14 +140,18 @@ ul {
   border-top: 1px solid rgba(153, 153, 153, 0.5);
   display: none;
 }
-.res_icon div:nth-of-type(2) {
+.res_icon {
+  cursor: pointer;
+}
+.res_icon .nN__icon {
+  color: var(--font-color);
+}
+.res_icon .nN__title {
   font-size: 10px !important;
   font-weight: bold;
   color: var(--span-font-color);
 }
-.res_icon div:nth-of-type(1) {
-  color: var(--font-color);
-}
+
 .wishlist:hover a {
   color: var(--second-color) !important;
 }
@@ -284,7 +288,7 @@ body {
 }
 .img-sm {
   min-height: 580px;
-  object-fit: cover !important;
+  object-fit: contain !important;
 }
 /* -------------------------slider-end------------------------------------ */
 .category__section {
@@ -438,7 +442,7 @@ form.active .submit__btn button:nth-child(2) {
 }
 .login-line span {
   position: relative;
-  z-index: 2222;
+  z-index: 12;
   background-color: var(--main-color);
   padding: 0 10px;
 }
@@ -540,7 +544,6 @@ form.active .remper__password {
   font-size: 0.75rem;
 }
 
-
 /* ----------------------------------loading-------------------------------- */
 
 .loading {
@@ -578,13 +581,19 @@ form.active .remper__password {
   color: #c6c6c6;
 }
 .footer__list,
-.sssss {
+.footer__logo {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .footer__list a {
   color: #c6c6c6;
+}
+.social__links {
+  font-size: 18px;
+}
+.social__links a {
+  line-height: 1.8;
 }
 @keyframes khamis {
   0% {
@@ -618,6 +627,9 @@ form.active .remper__password {
     width: 40px !important;
     font-size: 14px !important;
   }
+  footer {
+    margin-bottom: 66px !important;
+  }
 }
 @media (600px >= width) {
   .owl-theme .owl-nav button {
@@ -625,7 +637,11 @@ form.active .remper__password {
     width: 30px !important;
     font-size: 12px !important;
   }
+  .footer__section {
+    font-size: 80%;
+  }
 }
+/* --------------------------------------------------------------------------------- */
 .imgProduct:hover .img2 {
   opacity: 1;
   transition: opacity 0.1s ease;
@@ -833,4 +849,24 @@ form.active .remper__password {
 .notyf__message {
   margin-top: 3px;
   line-height: 1;
+}
+.login__container {
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+}
+.home__btn {
+  background-color: var(--second-color);
+  color: white;
+}
+.home__btn:hover  , .nav-link:hover{
+  background-color: #000000;
+  color: white;
+}
+.nav-link.active {
+  background-color: var(--second-color) !important;
+  color: white !important;
+}
+.nav-link{
+  color: var(--font-color);
 }
