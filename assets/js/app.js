@@ -35,16 +35,11 @@ callBack("../products.json")
         )}%</div>
         
           <img src=${product.image[0]}  alt=""    class="img1"/>
-            ${
-              product.image[1]
-                ? `<img src=${product.image[1]} alt="" class="img2"/>`
-                : ` <img src=${product.image[0]} alt="" class="img2"/>`
-            }
+            ${product.image[1] ? `<img src=${product.image[1]} alt="" class="img2"/>` : ` <img src=${product.image[0]} alt="" class="img2"/>`}
           </div>
           <div class="product__info">
           <div class="position-relative">
-          <span class="hint--top hint--medium position-absolute w-100 z-1 hintPos"  aria-label="${
-            product.name.ar
+          <span class="hint--top hint--medium position-absolute w-100 z-1 hintPos"  aria-label="${product.name.ar
           }">
           <span class="opacity-0">${product.name.ar}</span>
           </span>
@@ -55,11 +50,7 @@ callBack("../products.json")
           <span class="old__price">${product.old_price} جنيه</span>
           </p>
           <div class="colors">${product.colors
-            .map(
-              (color) =>
-                `<div style="background-color: ${color};" class="black__color"></div>`
-            )
-            .join("")}
+            .map((color) => `<div style="background-color: ${color};" class="black__color"></div>`).join("")}
           </div>
           </div>
         </a>
@@ -107,6 +98,10 @@ callBack("../products.json")
       });
     }
   });
+
+
+
+
 const popupBtns = document.querySelectorAll(".popup-event");
 popupBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -279,7 +274,7 @@ const handleWishList = (id) => {
       userWishlist.push(findmy);
       sendDataToLocalStorage("userWishlist", userWishlist);
       notyf.success("تم إضافة المنتج إلى المفضلة");
-      
+
       wishlistCounter.textContent = userWishlist.length;
     }
   } else {
@@ -354,7 +349,7 @@ if (showPassword) {
 
 
 
-const body = document.querySelector("body")
+// const body = document.querySelector("body")
 // body.addEventListener("click",e=>{
 //   if(e.target.closest(".addToWishList")){
 
@@ -368,3 +363,69 @@ const body = document.querySelector("body")
 //   btn1.classList.remove("d-none");
 //   btn2.classList.add("d-none");
 // }
+
+
+
+
+const errorPage = (element) => {
+  element.innerHTML = `
+  <div class="error__404 m-auto text-center active" >
+    <div class="">
+           <img src="./assets/images/error404.png" alt="" height="400px">
+    </div>
+    <h3>لا يمكن العثور على الصفحة</h3>
+  </div>
+    `;
+  setTimeout(() => {
+    location.href = "/";
+  }, 3000);
+}
+
+
+
+let cartProducts = JSON.parse(localStorage.getItem("cart-products")) ?? [];
+const cartCounter = document.querySelector(".cart-counter");
+const cartContainer = document.querySelector(".cart__products");
+function displayCart() {
+  // cartCounter.textContent = userWishlist.length;
+  cartContainer.innerHTML = "";
+  cartProducts.map((product) => {
+    cartContainer.innerHTML += `
+    <li class="my-1">
+              <div class="cart__product d-flex justify-content-between gap-1 align-items-center">
+                <div class="product__name flex-grow-1 px-1" id="${product.id}">
+                  <div class="remove__btn">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                  <a href="/product.html?${product.id}" class="p-0">${product.name.ar} <span class="siz">${product.sizes}</span></a>
+                  <div class="color" style="background-color: ${product.colors}"></div>
+                  <p class="m-0"><span>${product.quantity}</span> * <span>${product.price} جنيه</span></p>
+                </div>
+                <div class="product__image">
+                  <img src="${product.image[0]}" alt="" height="50px" />
+                </div>
+              </div>
+            </li>
+
+
+
+      `;
+  });
+}
+displayCart()
+
+
+const removeSelect = document.querySelector("body");
+removeSelect.addEventListener("click", (e) => {
+  if (e.target.closest(".remove__btn")) {
+
+    cartProducts = cartProducts.filter((ele) => ele.id !== +e.target.closest(".remove__btn").id || ele.sizes == e.target.closest(".siz").textContent );
+    console.log(cartProducts);
+    sendDataToLocalStorage("cart-products", cartProducts);
+    displayCart();
+    notyf.error("تم حذف المنتج من السلة");
+    if (cartProducts.length == 0) {
+      wishlistEmpty();
+    }
+  }
+});

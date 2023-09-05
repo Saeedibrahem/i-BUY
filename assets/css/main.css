@@ -170,6 +170,7 @@ ul {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
+  cursor: pointer;
 }
 .side-modal {
   background-color: white;
@@ -199,7 +200,10 @@ ul {
   color: var(--second-color);
 }
 .close__icon:hover {
-  background-color: #0000003b;
+  background-color: #000000ac;
+}
+.close__icon:hover i {
+  color: rgba(255, 255, 255, 0.64);
 }
 .active .overlay {
   opacity: 1;
@@ -753,7 +757,8 @@ form.active .remper__password {
   color: #2d3748;
   text-decoration: line-through !important;
 }
-.wishlist-counter {
+.wishlist-counter,
+.cart-counter {
   position: absolute;
   top: 3px;
   background: #f22c2c;
@@ -827,14 +832,14 @@ form.active .remper__password {
 }
 
 .error__404 {
-  height: 100vh;
+  height: 50vh;
   opacity: 0;
   visibility: hidden;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999999999999;
+  /* z-index: 9999999999999; */
   background-color: white;
 }
 .error__404.active {
@@ -859,7 +864,8 @@ form.active .remper__password {
   background-color: var(--second-color);
   color: white;
 }
-.home__btn:hover  , .nav-link:hover{
+.home__btn:hover,
+.nav-link:hover {
   background-color: #000000;
   color: white;
 }
@@ -867,6 +873,37 @@ form.active .remper__password {
   background-color: var(--second-color) !important;
   color: white !important;
 }
-.nav-link{
+.nav-link {
   color: var(--font-color);
+}
+.remove__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: normal;
+  height: 18px;
+  width: 18px;
+  background: #ededed;
+  line-height: 16px;
+  border-radius: 50%;
+  color: var(--second-color);
+}
+.remove__btn:hover {
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+.product__name {
+  position: relative;
+  margin-right: 18px;
+}
+.product__name .remove__btn {
+  position: absolute;
+  right: -8%;
+  top: 20px;
+}
+.product__name .color {
+  position: absolute;
+  left: 2%;
+  top: 5%;
 }

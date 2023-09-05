@@ -1,22 +1,18 @@
 const productId = window.location.search.split("?").join("");
+const cartProducts = JSON.parse(localStorage.getItem("cart-products")) ?? [];
+let findpro = {};
 callBack("../products.json").then((res) => {
   const product__container = document.querySelector(".product__container");
   if (res) {
     product__container.innerHTML = "";
 
-    const findpro = res.products.find((ele) => ele.id == productId);
+    findpro = res.products.find((ele) => ele.id == productId);
     if (findpro) {
       product__container.innerHTML = `
       <div class="row g-0 gap-5 || product-box">
       <div class="col-12 col-md-6 d-flex gap-1 || images__Con">
         <div class="d-flex flex-column gap-1 || small__image-con">
-        ${findpro.image
-          .map(
-            (image) =>
-              `<img class="sm-img" src=${image} alt="" height="100px" />`
-          )
-          .join("")}
-          
+        ${findpro.image.map((image) => `<img class="sm-img" src=${image} alt="" height="100px" />`).join("")}
         </div>
         <div class="product__image flex-grow-1">
           <img src=${findpro.image[0]} alt="" />
@@ -34,23 +30,13 @@ callBack("../products.json").then((res) => {
           <div class="product__color my-2">
             <p>اللون</p>
             <div class="d-flex gap-2">
-            ${findpro.colors
-              .map(
-                (color) =>
-                  `<div style="background-color: ${color}; " class="color"></div>`
-              )
-              .join("")}
-              
-              
-              
+            ${findpro.colors.map((color) => `<div style="background-color: ${color}; " class="color"></div>`).join("")}
             </div>
           </div>
           <div class="product__size my-2">
             <p>المقاس</p>
             <div class="d-flex gap-2">
-              <div class="size  ">${findpro.sizes[0]}</div>
-              <div class="size  ">${findpro.sizes[1]}</div>
-              <div class="size  ">${findpro.sizes[2]}</div>
+            ${findpro.sizes.map((size) => `<div class="size  ">${size}</div>`).join("")}           
             </div>
           </div>
           <div class="addToCart my-2">
@@ -60,14 +46,12 @@ callBack("../products.json").then((res) => {
                 <p class="m-0 quantity-counter">1</p>
                 <button class=" border-0 increaseBtn">+</button>
               </div>
-              <div class="addToCartBtn flex-grow-1 p-2">
+              <div class="addToCartBtn flex-grow-1 p-2" >
                 <button class=" w-100"> إضافة إلي السلة </button>
               </div>
             </div>
             <div class="my-3" >
-              <span class="p-2 addProdToWishList"onclick="handleWishList(${
-                findpro.id
-              })" >
+              <span class="p-2 addProdToWishList"onclick="handleWishList(${findpro.id})" >
                 <i class="fa-regular fa-heart"></i> إضافة إلى المفضلة 
               </span>
             </div>
@@ -83,14 +67,15 @@ callBack("../products.json").then((res) => {
     </div>
       `;
     } else {
-      console.log("product not found");
+      errorPage(product__container);
     }
   }
 });
 let product = {};
+let counter = "";
 const btnsSelector = document.querySelector("body");
 btnsSelector.addEventListener("click", (e) => {
-  const counter = document.querySelector(".quantity-counter");
+  counter = document.querySelector(".quantity-counter");
   if (e.target.closest(".decreaseBtn")) {
     if (counter.textContent > 1) {
       counter.textContent -= 1;
@@ -101,15 +86,11 @@ btnsSelector.addEventListener("click", (e) => {
   }
   if (e.target.closest(".product__size")) {
     if (e.target.closest(".product__size .size")) {
-      const sizeBtn = e.target
-        .closest(".product__size")
-        .querySelectorAll(".size");
+      const sizeBtn = e.target.closest(".product__size").querySelectorAll(".size");
       if (
         e.target.closest(".product__size .size").classList.contains("active")
       ) {
-        return e.target
-          .closest(".product__size .size")
-          .classList.remove("active");
+        return e.target.closest(".product__size .size").classList.remove("active");
       }
       sizeBtn.forEach((ele) => {
         ele.classList.remove("active");
@@ -121,23 +102,17 @@ btnsSelector.addEventListener("click", (e) => {
   }
   if (e.target.closest(".product__color")) {
     if (e.target.closest(".product__color .color")) {
-      const colorBtn = e.target
-        .closest(".product__color")
-        .querySelectorAll(".color");
+      const colorBtn = e.target.closest(".product__color").querySelectorAll(".color");
       if (
         e.target.closest(".product__color .color").classList.contains("active")
       ) {
-        return e.target
-          .closest(".product__color .color")
-          .classList.remove("active");
+        return e.target.closest(".product__color .color").classList.remove("active");
       }
       colorBtn.forEach((ele) => {
         ele.classList.remove("active");
       });
       e.target.closest(".product__color .color").classList.add("active");
-      const color = e.target.closest(".product__color .color").style[
-        "background-color"
-      ];
+      const color = e.target.closest(".product__color .color").style["background-color"];
       product.color = color;
     }
     return product;
@@ -145,8 +120,25 @@ btnsSelector.addEventListener("click", (e) => {
   if (e.target.closest(".small__image-con")) {
     if (e.target.closest(".small__image-con .sm-img")) {
       const product__image = document.querySelector(".product__image img");
-
       product__image.src = e.target.closest(".small__image-con .sm-img").src;
     }
   }
+  if (e.target.closest(".addToCartBtn ")) {
+    const newProduct = { ...findpro };
+    const findProd = cartProducts.find((ele) => ele.id == newProduct.id && ele.sizes == product.size && ele.colors == product.color);
+    if (findProd) {
+      findProd.quantity += +counter.textContent;
+      sendDataToLocalStorage("cart-products", cartProducts);
+      cartCounter.textContent = cartProducts.length;
+    } else {
+      newProduct.colors = product.color;
+      newProduct.sizes = product.size;
+      newProduct.quantity = +counter.textContent;
+      cartProducts.push(newProduct);
+      sendDataToLocalStorage("cart-products", cartProducts);
+      cartCounter.textContent = cartProducts.length;
+    }
+    displayCart();
+  }
 });
+cartCounter.textContent = cartProducts.length;
