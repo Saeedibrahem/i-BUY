@@ -126,19 +126,27 @@ btnsSelector.addEventListener("click", (e) => {
   if (e.target.closest(".addToCartBtn ")) {
     const newProduct = { ...findpro };
     const findProd = cartProducts.find((ele) => ele.id == newProduct.id && ele.sizes == product.size && ele.colors == product.color);
+    let cartId = parseInt(Math.random()* 999)
     if (findProd) {
       findProd.quantity += +counter.textContent;
       sendDataToLocalStorage("cart-products", cartProducts);
-      cartCounter.textContent = cartProducts.length;
+      // cartCounter.textContent = cartProducts.length;
+      displayCart()
+
     } else {
       newProduct.colors = product.color;
       newProduct.sizes = product.size;
       newProduct.quantity = +counter.textContent;
+      newProduct.cart_id = cartId
       cartProducts.push(newProduct);
       sendDataToLocalStorage("cart-products", cartProducts);
-      cartCounter.textContent = cartProducts.length;
+      // cartCounter.textContent = cartProducts.length;
+      displayCart()
+
     }
-    displayCart();
+  displayCart()
+    
   }
 });
 cartCounter.textContent = cartProducts.length;
+displayCart()

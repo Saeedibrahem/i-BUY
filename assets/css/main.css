@@ -700,6 +700,7 @@ form.active .remper__password {
 .hoverMeNowHot {
   padding: 10px;
   cursor: pointer;
+  border-radius: 9px;
 }
 .hoverMeNowHot:hover {
   background: #f0f0f078;
@@ -862,7 +863,8 @@ form.active .remper__password {
 }
 .home__btn {
   background-color: var(--second-color);
-  color: white;
+  color: white !important;
+  border: none !important;
 }
 .home__btn:hover,
 .nav-link:hover {
@@ -906,4 +908,9 @@ form.active .remper__password {
   position: absolute;
   left: 2%;
   top: 5%;
+}
+.search__prodcut  .price{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
 }

@@ -30,17 +30,13 @@ callBack("../products.json")
         </div>
         <a href="/product.html?${product.id}">
         <div class="position-relative || imgProduct ||product-image">
-        <div class="product-offer">وفر ${parseInt(
-          ((product.old_price - product.price) * 100) / product.old_price
-        )}%</div>
+        <div class="product-offer">وفر ${parseInt(((product.old_price - product.price) * 100) / product.old_price)}%</div>
         
-          <img src=${product.image[0]}  alt=""    class="img1"/>
-            ${product.image[1] ? `<img src=${product.image[1]} alt="" class="img2"/>` : ` <img src=${product.image[0]} alt="" class="img2"/>`}
+          <img src=${product.image[0]}  alt=""    class="img1"/> ${product.image[1] ? `<img src=${product.image[1]} alt="" class="img2"/>` : ` <img src=${product.image[0]} alt="" class="img2"/>`}
           </div>
           <div class="product__info">
           <div class="position-relative">
-          <span class="hint--top hint--medium position-absolute w-100 z-1 hintPos"  aria-label="${product.name.ar
-          }">
+          <span class="hint--top hint--medium position-absolute w-100 z-1 hintPos"  aria-label="${product.name.ar}">
           <span class="opacity-0">${product.name.ar}</span>
           </span>
           <h3 class="overLap">${product.name.ar}</h3>
@@ -49,8 +45,7 @@ callBack("../products.json")
           <span class="new__price">${product.price} جنيه</span>
           <span class="old__price">${product.old_price} جنيه</span>
           </p>
-          <div class="colors">${product.colors
-            .map((color) => `<div style="background-color: ${color};" class="black__color"></div>`).join("")}
+          <div class="colors">${product.colors.map((color) => `<div style="background-color: ${color};" class="black__color"></div>`).join("")}
           </div>
           </div>
         </a>
@@ -126,19 +121,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   } else {
     document.querySelector(".wishlist a").setAttribute("href", "login.html");
-    document
-      .querySelector(".new__wishlist a")
-      .setAttribute("href", "login.html");
+    document.querySelector(".new__wishlist a").setAttribute("href", "login.html");
     document.querySelector(".loading").classList.add("done");
     if (JSON.parse(localStorage.getItem("login"))) {
       document.querySelector("body").classList.add("isLogin");
       wishlistCounter.textContent = userWishlist.length;
-      document
-        .querySelector(".wishlist a")
-        .setAttribute("href", "wishlist.html");
-      document
-        .querySelector(".new__wishlist a")
-        .setAttribute("href", "wishlist.html");
+      document.querySelector(".wishlist a").setAttribute("href", "wishlist.html");
+      document.querySelector(".new__wishlist a").setAttribute("href", "wishlist.html");
     } else {
       document.querySelector("body").classList.remove("isLogin");
     }
@@ -147,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const loginBtn = document.querySelector(".login-title button:nth-child(1)");
 const registerBtn = document.querySelector(".login-title button:nth-child(2)");
-const loginForm = document.querySelector("form  ");
+const loginForm = document.querySelector("form");
 const userData = JSON.parse(localStorage.getItem("userData")) ?? [];
 if (loginBtn) {
   loginBtn.addEventListener("click", () => {
@@ -173,22 +162,14 @@ if (loginForm) {
           element.classList.remove("active");
           document.querySelector("body").style.overflow = "auto";
           document.querySelector("body").style.paddingRight = "0";
-          document
-            .querySelector(".new__navList-container")
-            .classList.remove("pop");
+          document.querySelector(".new__navList-container").classList.remove("pop");
           document.querySelector("body").classList.add("isLogin");
-          document
-            .querySelector(".wishlist a")
-            .setAttribute("href", "wishlist.html");
-          document
-            .querySelector(".new__wishlist a")
-            .setAttribute("href", "wishlist.html");
+          document.querySelector(".wishlist a").setAttribute("href", "wishlist.html");
+          document.querySelector(".new__wishlist a").setAttribute("href", "wishlist.html");
 
           wishlistCounter.textContent = userWishlist.length;
           clearInputValue(e);
-          let userName = JSON.parse(localStorage.getItem("login")).email.split(
-            "@"
-          )[0];
+          let userName = JSON.parse(localStorage.getItem("login")).email.split("@")[0];
           notyf.success(
             `أهلا بك ${findme.username ? findme.username : userName}`
           );
@@ -257,6 +238,8 @@ let userWishlist = JSON.parse(localStorage.getItem("userWishlist")) ?? [];
 const wishlistCounter = document.querySelector(".wishlist-counter");
 if (document.querySelector("body").classList.contains("isLogin")) {
   wishlistCounter.textContent = userWishlist.length;
+  cartCounter.textContent = cartProducts.length;
+
 }
 // 
 const handleWishList = (id) => {
@@ -285,6 +268,7 @@ const handleWishList = (id) => {
   }
 };
 
+// ---------------------------------searchBar---------------------------------------
 
 const searchInput = document.getElementById("searchInput");
 const searchBar = document.querySelector(".header_searchbar");
@@ -308,7 +292,7 @@ searchInput.addEventListener("keyup", () => {
   } else {
     newData.forEach((e) => {
       productSearch.innerHTML += `
-      <a href="/product.html?${e.id}">
+      <a href="/product.html?${e.id}" style="color:inherit !important">
       
       <div class=" d-flex gap-3 hoverMeNowHot align-items-center">
         <div class="img">
@@ -317,8 +301,8 @@ searchInput.addEventListener("keyup", () => {
         <div class="title flex-grow-1">
         <p>${e.name.ar}</p>
         </div>
-        <div class="price">$${e.price}</div>
-    </div>
+        <div class="price "><span class="old__price">${e.old_price} جنيه</span> <span class="new__price">${e.price} جنيه</span></div>
+        </div>
       </a>
     `;
     });
@@ -333,6 +317,8 @@ window.addEventListener("click", (e) => {
     }
   }
 });
+
+
 const showPassword = document.querySelector(".show-password");
 const password = document.getElementById("password");
 if (showPassword) {
@@ -387,45 +373,55 @@ let cartProducts = JSON.parse(localStorage.getItem("cart-products")) ?? [];
 const cartCounter = document.querySelector(".cart-counter");
 const cartContainer = document.querySelector(".cart__products");
 function displayCart() {
-  // cartCounter.textContent = userWishlist.length;
+  cartCounter.textContent = cartProducts.length;
   cartContainer.innerHTML = "";
-  cartProducts.map((product) => {
-    cartContainer.innerHTML += `
-    <li class="my-1">
-              <div class="cart__product d-flex justify-content-between gap-1 align-items-center">
-                <div class="product__name flex-grow-1 px-1" id="${product.id}">
-                  <div class="remove__btn">
-                    <i class="fa-solid fa-xmark"></i>
+  if (cartProducts.length !== 0) {
+
+    cartProducts.map((product) => {
+      cartContainer.innerHTML += `
+      <li class="my-1">
+                <div class="cart__product d-flex justify-content-between gap-1 align-items-center">
+                  <div class="product__name flex-grow-1 px-1" >
+                    <div class="remove__btn" id="${product.cart_id}">
+                      <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <a href="/product.html?${product.id}" class="p-0">${product.name.ar} <span class="siz">${product.sizes}</span></a>
+                    <div class="color" style="background-color: ${product.colors}"></div>
+                    <p class="m-0" style="font-size: 12px;"><span>${product.quantity}</span> * <span>${product.price} جنيه</span></p>
                   </div>
-                  <a href="/product.html?${product.id}" class="p-0">${product.name.ar} <span class="siz">${product.sizes}</span></a>
-                  <div class="color" style="background-color: ${product.colors}"></div>
-                  <p class="m-0"><span>${product.quantity}</span> * <span>${product.price} جنيه</span></p>
+                  <div class="product__image">
+                    <img src="${product.image[0]}" alt="" height="50px" />
+                  </div>
                 </div>
-                <div class="product__image">
-                  <img src="${product.image[0]}" alt="" height="50px" />
-                </div>
-              </div>
-            </li>
-
-
-
-      `;
-  });
+              </li>
+              <div class="checkout">
+              <p class="d-flex justify-content-between"><strong>المجموع:</strong><span>${product.price * product.quantity} جنيه</span></p>
+              <button class="btn hoverMeNowHot"> إتمام الطلب </button>
+              <a href="/" class="btn home__btn">تابع التسوق</a>
+            </div>
+        `;
+    });
+  } else {
+    cartEmpty(cartContainer)
+  }
 }
-displayCart()
 
 
 const removeSelect = document.querySelector("body");
 removeSelect.addEventListener("click", (e) => {
   if (e.target.closest(".remove__btn")) {
-
-    cartProducts = cartProducts.filter((ele) => ele.id !== +e.target.closest(".remove__btn").id || ele.sizes == e.target.closest(".siz").textContent );
-    console.log(cartProducts);
-    sendDataToLocalStorage("cart-products", cartProducts);
-    displayCart();
-    notyf.error("تم حذف المنتج من السلة");
     if (cartProducts.length == 0) {
-      wishlistEmpty();
+      cartEmpty(cartContainer)
+    } else {
+      cartProducts = cartProducts.filter((ele) => ele.cart_id !== +e.target.closest(".remove__btn").id);
+      sendDataToLocalStorage("cart-products", cartProducts);
+      notyf.error("تم حذف المنتج من السلة");
+      displayCart()
     }
   }
-});
+}); displayCart()
+
+function cartEmpty(container) {
+  container.innerHTML = `<div class=" text-center">لا توجد منتجات في سلة التسوق <a href="/" class="btn home__btn">تابع التسوق</a></div> `
+
+}
