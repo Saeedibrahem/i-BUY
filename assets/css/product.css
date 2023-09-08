@@ -48,9 +48,7 @@
   border: 1px solid rgba(195, 195, 195, 0.5);
   cursor: pointer;
 }
-.addToCartBtn:hover button {
-  background-color: #000000;
-}
+
 .quantity {
   border-radius: 3px;
   border: 1px solid rgba(195, 195, 195, 0.5);
@@ -69,13 +67,32 @@
   color: #000000;
 }
 .addToCartBtn button {
-  color: var(--main-color);
+  color:var(--main-color) ;
   background-color: var(--second-color);
+  opacity: 0.5;
   outline: none;
   border: none;
   border-radius: 3px;
   height: 45px;
   transition: all 0.2s ease;
+  cursor: not-allowed;
+}
+/* .addToCartBtn:hover button {
+  background-color: #000000;
+  color: #ffffff;
+} */
+.addToCartBtn button.active{
+  color: var(--main-color);
+  background-color: var(--second-color);
+  opacity: 1;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  height: 45px;
+  cursor: pointer;
+}
+.addToCartBtn button.active:hover{
+  background-color: #000000;
 }
 .addProdToWishList {
   cursor: pointer;
@@ -111,6 +128,7 @@
   border-top: 1px solid rgba(195, 195, 195, 0.7);
   padding: 16px 0;
 }
+
 
 @media (768px > width) {
   .images__Con {

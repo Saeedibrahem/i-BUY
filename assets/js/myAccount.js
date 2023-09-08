@@ -1,32 +1,35 @@
+const user = JSON.parse(localStorage.getItem("login")) ?? {};
+const userData = JSON.parse(localStorage.getItem("userData")) ?? [];
+const accountForm = document.getElementById("accountForm");
+let userFormData = { ...user };
+
+// ================================================================== DOM load check =========================================================
+
 document.addEventListener("DOMContentLoaded", () => {
   if (!JSON.parse(localStorage.getItem("login"))) {
     const container = document.querySelector(".account__dashboard ")
     errorPage(container)
   } else {
-    let userName = JSON.parse(localStorage.getItem("login"));
-    document.getElementById("userName").textContent = userName?.username ? userName.username : userName.email.split("@")[0];
+    // let user = JSON.parse(localStorage.getItem("login"));
+    document.getElementById("userName").textContent = user?.username ? user.username : userName;
+    document.getElementById("validationDefaultUsername").value = user?.username ? user.username : userName;
+    document.getElementById("validationDefault03").value = user.email;
   }
 });
+
+// ================================================================== logOut click event =========================================================
 
 document.querySelector(".logOut").addEventListener("click", () => {
-  if (
-    location.pathname.includes("wishlist") ||
-    location.pathname.includes("myAccount")
-  ) {
+  if (location.pathname.includes("myAccount")) {
     let userName = JSON.parse(localStorage.getItem("login")).email.split("@")[0];
     notyf.success(`هتوحشنا 💔${user.username ? user.username : userName}`);
-    setTimeout(() => {
-      location.href = "/";
-      loggedOut();
-    }, 2000);
+    loggedOut();
   }
-
 });
-const user = JSON.parse(localStorage.getItem("login")) ?? {};
-const userData = JSON.parse(localStorage.getItem("userData")) ?? [];
 
-const accountForm = document.getElementById("accountForm");
-let userFormData = { ...user };
+// ================================================================== form edit account info events =========================================================
+
+
 accountForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -38,9 +41,7 @@ accountForm.addEventListener("submit", (e) => {
       userFormData.lastname = e.target.lastName.value;
     }
     if (e.target.userName.value.length !== 0) {
-      e.target.userName.value = userFormData.username;
       userFormData.username = e.target.userName.value;
-      document.getElementById("userName").textContent = e.target.userName.value
     }
     if (e.target.userEmail.value.length !== 0) {
       userFormData.email = e.target.userEmail.value;
@@ -51,30 +52,34 @@ accountForm.addEventListener("submit", (e) => {
     ) {
       if (e.target.userNewPass.value === e.target.userNewPass2.value) {
         userFormData.password = e.target.userNewPass.value;
-        closePop(e.target);
+        saveChanges(e.target);
         loggedOut();
-        setTimeout(() => {
-          location.href = "/login.html";
-        }, 2000);
         return;
       } else {
         notyf.error("كلمة المرور غير متطابقة");
       }
     }
-    closePop(e.target);
+    saveChanges(e.target);
   } else {
     notyf.error("كلمة المرور الحاليه خاطئه");
   }
 });
 
+
+// ================================================================== logOut func =========================================================
+
 const loggedOut = () => {
   localStorage.removeItem("login");
-  document.querySelector("body").classList.remove("isLogin");
-  document.querySelector(".wishlist a").removeAttribute("href", "wishlist.html");
-  document.querySelector(".new__wishlist a").removeAttribute("href", "wishlist.html");
+  removeIsLogin()
   wishlistCounter.textContent = "0";
+  setTimeout(() => {
+    location.href = "/login.html";
+  }, 2000);
 };
-const closePop = (e) => {
+
+// ================================================================== save Changes func =========================================================
+
+const saveChanges = (e) => {
   const newUserData = userData.filter((ele) => ele.email !== user.email);
   newUserData.push(userFormData);
   localStorage.setItem("login", JSON.stringify(userFormData));

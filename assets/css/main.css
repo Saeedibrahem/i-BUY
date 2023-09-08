@@ -27,6 +27,7 @@ ul {
 }
 .container {
   max-width: 70rem !important;
+  margin: 24px auto !important;
 }
 
 .myUser {
@@ -58,6 +59,7 @@ ul {
   /* background-color: red; */
   padding: 0.8rem 1rem;
   gap: 20px;
+  margin: 0 auto !important;
 }
 
 .navBar__rightSide {
@@ -196,14 +198,14 @@ ul {
   box-shadow: var(--box-shadow);
 }
 .close__icon i {
-  font-size: 24px;
+  font-size: 20px;
   color: var(--second-color);
 }
 .close__icon:hover {
-  background-color: #000000ac;
+  background-color: rgba(0, 0, 0, 0.814);
 }
 .close__icon:hover i {
-  color: rgba(255, 255, 255, 0.64);
+  color: rgba(255, 255, 255, 0.908);
 }
 .active .overlay {
   opacity: 1;
@@ -237,17 +239,20 @@ body {
   position: absolute;
   width: 100%;
 }
+
 .owl-dots .owl-dot span {
-  background: #000 !important;
-  opacity: 0.25;
+  border: 1px solid var(--border-color) !important;
+  background: white !important;
+  opacity: 0.7;
 }
 .owl-dots .owl-dot.active span {
-  background: var(--second-color) !important;
   width: 40px !important;
   height: 8px !important;
   border-radius: 20px !important;
   opacity: 80% !important;
   transition: opacity 0.2s ease-in-out !important;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 8px #000 !important;
 }
 
 .owl-carousel {
@@ -291,8 +296,8 @@ body {
   background-color: rgba(224, 224, 224, 0.6) !important;
 }
 .img-sm {
-  min-height: 580px;
-  object-fit: contain !important;
+  max-height: 580px;
+  /* object-fit: contain !important; */
 }
 /* -------------------------slider-end------------------------------------ */
 .category__section {
@@ -340,10 +345,23 @@ body {
 .day__offer-img img {
   max-height: 411px;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /* -------------------------login-menu------------------------------------ */
+.center-content .close__icon{
+position: absolute;
+top: -20px;
+right: -20px;
+z-index: 99;
+background-color: var(--main-color);
+}
+.center-content .close__icon:hover{
+  background-color: #4a5568;
+}
+.center-content .close__icon i {
+font-size: 20px;
+}
 .login__section-container .box__container {
   transform: scale(0);
   background-color: white;
@@ -634,6 +652,9 @@ form.active .remper__password {
   footer {
     margin-bottom: 66px !important;
   }
+  .navBar__container{
+    position: static;
+  }
 }
 @media (600px >= width) {
   .owl-theme .owl-nav button {
@@ -643,6 +664,23 @@ form.active .remper__password {
   }
   .footer__section {
     font-size: 80%;
+  }
+  footer {
+    margin-bottom: 50px !important;
+  }
+  .footer__section{
+    padding: 1.5rem 0;
+  }
+  .product__slider {
+    padding: 10px 10px 20px !important;
+    margin: 20px 0;
+  }
+  .cart-modal , .side-modal{
+    width: 280px !important;
+  }
+  .cart__menu-items{
+    font-size: 90% !important;
+    padding: 12px 15px 20px !important;
   }
 }
 /* --------------------------------------------------------------------------------- */
@@ -770,7 +808,7 @@ form.active .remper__password {
   right: -12px;
 }
 .product__slider {
-  padding: 32px 24px 80px;
+  padding: 20px 22px 60px;
 }
 .cart-modal .cart__title {
   flex-grow: 1;
@@ -800,7 +838,7 @@ form.active .remper__password {
 .cart__menu-items .btn {
   width: 100%;
   margin-top: 15px;
-
+padding: 10px;
   border: 1px solid var(--border-color);
 }
 .cart-modal {
@@ -810,6 +848,8 @@ form.active .remper__password {
   background-color: white;
   width: 350px;
   height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
   gap: 20px;
   box-shadow: var(--box-shadow);
   z-index: 55;
@@ -902,7 +942,7 @@ form.active .remper__password {
 .product__name .remove__btn {
   position: absolute;
   right: -8%;
-  top: 20px;
+  top: 10px;
 }
 .product__name .color {
   position: absolute;
@@ -913,4 +953,46 @@ form.active .remper__password {
   display: flex;
   flex-direction: column;
   font-size: 12px;
+}
+.comments__slider .owl-dots{
+  display: none;
+}
+.comment__name strong{
+  color: var(--font-color);
+}
+.login__section{
+  min-height: 630px;
+}
+select{
+  border: 1px solid #CBD5E0;
+    background-size: 16px 100%;
+    padding: 0.2em 35px 0.2em 0.5em;
+    background: var(--main-color) url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==) no-repeat 98% 50%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    outline: 0;
+    box-shadow: 0px 0px 0px -7px rgba(0,0,0,0);
+}
+select.orderby{
+  padding-bottom: 3px;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 25px;
+    height: auto;
+    border-radius: 0;
+    font-size: 90%;
+    background-color: transparent;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    background-position: right 0 top 50%;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-size: auto 18px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==);
 }

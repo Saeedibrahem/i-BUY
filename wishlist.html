@@ -71,7 +71,7 @@
 
     <div class="new__navList-container">
       <div class="row w-100 g-0 align-items-center">
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div class="res_icon text-center">
             <a href="/">
               <div class="nN__icon">
@@ -81,7 +81,7 @@
             </a>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div
             class="res_icon text-center popup-event"
             data-id="category__menu"
@@ -92,7 +92,7 @@
             <div class="lh-1 nN__title">الأقسام</div>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div
             class="res_icon text-center popup-event loginBtn"
             data-id="login"
@@ -111,7 +111,7 @@
             </a>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div class="res_icon text-center new__wishlist">
             <a>
               <div class="nN__icon">
@@ -121,7 +121,7 @@
             </a>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div class="res_icon text-center popup-event" data-id="cart__menu">
             <div class="nN__icon">
               <i class="fa-solid fa-cart-shopping"></i>
@@ -147,7 +147,7 @@
       <div class="row g-0">
         <div class="col-12 mx-auto">
           <div class="d-flex flex-column gap-2">
-            <div class="wishlist__box-title">
+            <div class="wishlist__box-title d-none d-md-flex">
               <div class="product-remove-box p-3"><div></div></div>
               <div class="product-thumbnail p-3"></div>
               <div class="product-name p-3">الإسم</div>
@@ -193,15 +193,20 @@
       </div>
     </div>
 
+    
+
     <footer>
       <div class="footer__section">
-        <div class="row g-0 footer__container container ">
-          <div class="col-6 col-lg-3   p-3">
+        <div class="row g-0 footer__container container">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__logo">
               <div class="logo__image pb-3">
                 <a href="/">
-                  <img src="./assets/images/footer-logo.png" width="100px" alt="" />
-
+                  <img
+                    src="./assets/images/footer-logo.png"
+                    width="100px"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="footer__title">
@@ -223,7 +228,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-lg-3   p-3">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
@@ -237,7 +242,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-6 col-lg-3   p-3">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
@@ -249,13 +254,17 @@
               </ul>
             </div>
           </div>
-          <div class="col-6 col-lg-3   p-3">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
                   <a><strong>تحتاج للمساعده ؟</strong></a>
                 </li>
-                <li><a href=""> <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a></li>
+                <li>
+                  <a href="">
+                    <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a
+                  >
+                </li>
                 <li>
                   <a><strong>إشترك فى نشرتنا</strong></a>
                 </li>
@@ -268,17 +277,30 @@
     <div class="login__section-container" id="login">
       <div class="overlay || clickToClose" data-id="login"></div>
       <div class="center-content">
+      
         <div class="box__container">
+          <div
+          class="close__icon d-flex justify-content-center align-items-center || clickToClose"
+          data-id="login"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </div>
           <div class="row g-0">
             <div class="col-3 login-img d-md-block d-none"></div>
             <div class="col">
               <form action="" class="active">
                 <div class="flex-grow-1 p-3 gap-4 d-flex flex-column">
                   <div class="login-title d-flex justify-content-center mt-3">
-                    <button type="button" class="btn btn-dark">
+                    <button
+                      type="button"
+                      class="btn btn-dark px-2 py-3 px-sm-4 py-sm-3"
+                    >
                       تسجيل الدخول
                     </button>
-                    <button type="button" class="btn btn-light">
+                    <button
+                      type="button"
+                      class="btn btn-light px-2 py-3 px-sm-4 py-sm-3"
+                    >
                       حساب جديد
                     </button>
                   </div>
@@ -341,8 +363,12 @@
                     <div
                       class="d-flex justify-content-center align-content-center gap-2 || register-with"
                     >
-                      <div class="btn btn-danger"><span>Google</span></div>
-                      <div class="btn btn-primary"><span>Facebook</span></div>
+                      <div class="btn btn-danger p-2 px-4 p-sm-3 px-sm-5">
+                        <span>Google</span>
+                      </div>
+                      <div class="btn btn-primary p-2 px-4 p-sm-3 px-sm-5">
+                        <span>Facebook</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -353,7 +379,7 @@
       </div>
     </div>
     <div class="modal-container" id="category__menu">
-      <div class="overlay || clickToClose" data-id="category__menu"></div>
+      <div class="overlay || || clickToClose" data-id="category__menu"></div>
       <div class="side-modal">
         <div class="d-flex flex-column p-4">
           <div
@@ -362,9 +388,9 @@
           >
             <i class="fa-solid fa-xmark"></i>
           </div>
-          <div class="logo pb-3">
+          <a href="/" class="logo pb-3">
             <img src="./assets/images/ibuy-logo.png" alt="" width="90px" />
-          </div>
+          </a>
           <div class="side__menu-category">
             <ul class="gap-3 d-flex flex-column">
               <li><a href="">جميع المنتجات</a></li>
@@ -384,8 +410,10 @@
       <div class="cart-modal">
         <div class="d-flex flex-column">
           <div class="cart__title d-flex flex-row">
-            <div class="close__icon d-flex justify-content-center align-items-center || clickToClose"
-              data-id="cart__menu">
+            <div
+              class="close__icon d-flex justify-content-center align-items-center || clickToClose"
+              data-id="cart__menu"
+            >
               <i class="fa-solid fa-xmark"></i>
             </div>
             <div class="p-0 text-center">
@@ -393,9 +421,8 @@
             </div>
           </div>
           <div class="cart__menu-items">
-            <ul class="gap-3 d-flex flex-column cart__products">
-             
-              </ul>
+            <ul class="gap-3 d-flex flex-column cart__products"></ul>
+            <div class="checkout mt-3"></div>
           </div>
         </div>
       </div>

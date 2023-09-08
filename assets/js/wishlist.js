@@ -1,3 +1,5 @@
+// ================================================================== display Wishlist check =========================================================
+
 let userWishlist = JSON.parse(localStorage.getItem("userWishlist")) ?? [];
 const wishlistData = document.querySelector(".wishlist__data");
 if (userWishlist.length == 0) {
@@ -5,18 +7,8 @@ if (userWishlist.length == 0) {
 } else {
   displayWishlist();
 }
-const removeBtns = document.querySelector("body");
-removeBtns.addEventListener("click", (e) => {
-  if (e.target.closest(".product-remove")) {
-    userWishlist = userWishlist.filter((ele) => ele.id !== +e.target.closest(".product-remove").id);
-    sendDataToLocalStorage("userWishlist", userWishlist);
-    displayWishlist();
-    notyf.error("تم حذف المنتج من المفضلة");
-    if (userWishlist.length == 0) {
-      wishlistEmpty();
-    }
-  }
-});
+
+// ================================================================== display products in Wishlist func =========================================================
 
 function displayWishlist() {
   wishlistCounter.textContent = userWishlist.length;
@@ -56,6 +48,23 @@ function displayWishlist() {
       `;
   });
 }
+// ================================================================== remove product from wishlist event =========================================================
+
+const removeBtns = document.querySelector("body");
+removeBtns.addEventListener("click", (e) => {
+  if (e.target.closest(".product-remove")) {
+    userWishlist = userWishlist.filter((ele) => ele.id !== +e.target.closest(".product-remove").id);
+    sendDataToLocalStorage("userWishlist", userWishlist);
+    displayWishlist();
+    notyf.error("تم حذف المنتج من المفضلة");
+    if (userWishlist.length == 0) {
+      wishlistEmpty();
+    }
+  }
+});
+
+// ================================================================== wishlist is Empty func =========================================================
+
 function wishlistEmpty() {
   const wishlist__container = document.querySelector(".wishlist__container");
   wishlist__container.innerHTML = `

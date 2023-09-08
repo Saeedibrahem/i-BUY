@@ -28,10 +28,10 @@
           </div>
           <div class="logo">
             <a href="/">
-            <img
-              src="./assets/images/ibuy-logo.png "
-              class="w-100"
-              alt="logo"
+              <img
+                src="./assets/images/ibuy-logo.png "
+                class="w-100"
+                alt="logo"
             /></a>
           </div>
           <div class="searchbar header_searchbar position-relative">
@@ -41,8 +41,7 @@
               type="search"
               placeholder="إبحث هنا عن أى شئ تريده..."
             />
-            <div class="search__prodcut hidden">
-            </div>
+            <div class="search__prodcut hidden"></div>
           </div>
         </div>
         <div class="navList-container">
@@ -70,7 +69,7 @@
 
     <div class="new__navList-container">
       <div class="row w-100 g-0 align-items-center">
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div class="res_icon text-center">
             <a href="/">
               <div class="nN__icon">
@@ -80,7 +79,7 @@
             </a>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div
             class="res_icon text-center popup-event"
             data-id="category__menu"
@@ -91,7 +90,7 @@
             <div class="lh-1 nN__title">الأقسام</div>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div
             class="res_icon text-center popup-event loginBtn"
             data-id="login"
@@ -110,7 +109,7 @@
             </a>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div class="res_icon text-center new__wishlist">
             <a>
               <div class="nN__icon">
@@ -120,7 +119,7 @@
             </a>
           </div>
         </div>
-        <div class="col p-3">
+        <div class="col p-1 py-2 p-sm-3">
           <div class="res_icon text-center popup-event" data-id="cart__menu">
             <div class="nN__icon">
               <i class="fa-solid fa-cart-shopping"></i>
@@ -131,7 +130,7 @@
       </div>
     </div>
     <section class="slider-section">
-      <div class="owl-carousel owl-theme first-slider">
+      <div class="owl-carousel owl-theme first-slider mb-5">
         <div class="item">
           <img
             class="img-lg || d-none d-sm-block"
@@ -183,7 +182,7 @@
       </div>
     </section>
     <section class="info d-flex justify-content-center">
-      <div class="container m-5">
+      <div class="container my-4">
         <div class="row g-0">
           <div class="col-lg-3 col-md-6 p-2">
             <div class="d-flex gap-2 align-items-center box-container">
@@ -258,10 +257,10 @@
     </section>
 
     <div class="category__section container d-none d-sm-block">
-      <div class="category__title d-flex p-3 w-100 gap-2">
+      <div class="category__title d-flex py-3 w-100 gap-2">
         <h4>تسوق عبر الأقسام</h4>
         <div class="break_line flex-grow-1"></div>
-        <button class="btn btn-outline-primary">عرض الكل</button>
+        <button class="btn home__btn">عرض الكل</button>
       </div>
       <div class="category__items d-flex g-0">
         <div class="category">
@@ -278,8 +277,8 @@
         </div>
       </div>
     </div>
-    <div class="container d-block d-sm-none">
-      <div class="category__title d-flex p-3 w-100 gap-2">
+    <div class="container d-block d-sm-none ">
+      <div class="category__title d-flex py-3 w-100 gap-2">
         <h4>تسوق عبر الأقسام</h4>
         <div class="break_line flex-grow-1"></div>
         <button class="btn btn-outline-primary">عرض الكل</button>
@@ -300,11 +299,11 @@
       </div>
     </div>
     <div class="product__slider container">
-      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+      <div class="offer__product-title d-flex py-3 w-100 gap-2">
         <h4 class="d-flex gap-1">
           <strong
             style="
-              border-radius: 9px;
+              border-radius: 5px;
               color: aliceblue;
               background-color: var(--second-color);
               width: fit-content;
@@ -313,7 +312,7 @@
           >
             %
           </strong>
-          عروض اليوم
+          عرض اليوم
         </h4>
         <div class="break_line flex-grow-1"></div>
         <div class="timer"></div>
@@ -343,13 +342,23 @@
     </div>
 
     <div class="day__offer-img">
-      <img src="./assets/images/day-offer.jpg" alt="" class="w-100" />
+      <!-- <img src="./assets/images/day-offer.jpg" alt="" class="w-100" /> -->
+      <img
+        class="|| d-none d-sm-block w-100"
+        src="./assets/images/Slide-PC-07.jpg "
+        alt=""
+      />
+      <img
+        class="|| d-block d-sm-none w-100"
+        src="./assets/images/Slide-Mobile-07.jpg"
+        alt=""
+      />
     </div>
     <div class="product__slider container">
-      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+      <div class="offer__product-title d-flex py-3 w-100 gap-2">
         <h4>الأكثر مبيعاً</h4>
         <div class="break_line flex-grow-1"></div>
-        <button class="btn btn-outline-primary">تسوق الآن</button>
+        <button class="btn home__btn">تسوق الآن</button>
       </div>
       <div class="owl-carousel products-slider owl-theme">
         <div class="item">
@@ -378,25 +387,202 @@
     </div>
 
     <div class="comments__slider container product__slider">
-      <div class="offer__product-title d-flex p-3 w-100 gap-2">
+      <div class="offer__product-title d-flex py-3 w-100 gap-2">
         <h4>آراء عملاؤنا</h4>
         <div class="break_line flex-grow-1"></div>
-        <button class="btn btn-outline-primary">تسوق الآن</button>
+        <button class="btn home__btn">تسوق الآن</button>
       </div>
-      <div class="owl-carousel products-slider owl-theme">
-        <div class="item">good</div>
+      <div class="owl-carousel comments__slider owl-theme">
+        <div
+          class="item p-2"
+          style="border: 1px solid var(--border-color); border-radius: 9px"
+        >
+          <div class="">
+            <div
+              class="d-flex justify-content-between align-items-center pb-2 px-1"
+            >
+              <img
+                src="./assets/images/comment.png"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <i
+                class="fa-brands fa-facebook"
+                style="font-size: 30px; color: #425a96"
+              ></i>
+            </div>
+            <div class="comment__name">
+              <p
+                class="mb-1 px-2"
+                style="height: 50px; overflow: auto; font-size: 14px"
+              >
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+                non?
+              </p>
+              <strong> Saeed Ebrahim</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="item p-2"
+          style="border: 1px solid var(--border-color); border-radius: 9px"
+        >
+          <div class="">
+            <div
+              class="d-flex justify-content-between align-items-center pb-2 px-1"
+            >
+              <img
+                src="./assets/images/comment.png"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <i
+                class="fa-brands fa-facebook"
+                style="font-size: 30px; color: #425a96"
+              ></i>
+            </div>
+            <div class="comment__name">
+              <p
+                class="mb-1 px-2"
+                style="height: 50px; overflow: auto; font-size: 14px"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <strong> Ahmed Ebrahim</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="item p-2"
+          style="border: 1px solid var(--border-color); border-radius: 9px"
+        >
+          <div class="">
+            <div
+              class="d-flex justify-content-between align-items-center pb-2 px-1"
+            >
+              <img
+                src="./assets/images/comment.png"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <i
+                class="fa-brands fa-facebook"
+                style="font-size: 30px; color: #425a96"
+              ></i>
+            </div>
+            <div class="comment__name">
+              <p
+                class="mb-1 px-2"
+                style="height: 50px; overflow: auto; font-size: 14px"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <strong> Ahmed Sasa</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="item p-2"
+          style="border: 1px solid var(--border-color); border-radius: 9px"
+        >
+          <div class="">
+            <div
+              class="d-flex justify-content-between align-items-center pb-2 px-1"
+            >
+              <img
+                src="./assets/images/comment.png"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <i
+                class="fa-brands fa-facebook"
+                style="font-size: 30px; color: #425a96"
+              ></i>
+            </div>
+            <div class="comment__name">
+              <p
+                class="mb-1 px-2"
+                style="height: 50px; overflow: auto; font-size: 14px"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <strong> Sasa Khaled</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="item p-2"
+          style="border: 1px solid var(--border-color); border-radius: 9px"
+        >
+          <div class="">
+            <div
+              class="d-flex justify-content-between align-items-center pb-2 px-1"
+            >
+              <img
+                src="./assets/images/comment.png"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <i
+                class="fa-brands fa-facebook"
+                style="font-size: 30px; color: #425a96"
+              ></i>
+            </div>
+            <div class="comment__name">
+              <p
+                class="mb-1 px-2"
+                style="height: 50px; overflow: auto; font-size: 14px"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <strong> Ahmed Lolo</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="item p-2"
+          style="border: 1px solid var(--border-color); border-radius: 9px"
+        >
+          <div class="">
+            <div
+              class="d-flex justify-content-between align-items-center pb-2 px-1"
+            >
+              <img
+                src="./assets/images/comment.png"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <i
+                class="fa-brands fa-facebook"
+                style="font-size: 30px; color: #425a96"
+              ></i>
+            </div>
+            <div class="comment__name">
+              <p
+                class="mb-1 px-2"
+                style="height: 50px; overflow: auto; font-size: 14px"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <strong> Tamer Hema</strong>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <footer>
       <div class="footer__section">
-        <div class="row g-0 footer__container container ">
-          <div class="col-6 col-lg-3   p-3">
+        <div class="row g-0 footer__container container">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__logo">
               <div class="logo__image pb-3">
                 <a href="/">
-                  <img src="./assets/images/footer-logo.png" width="100px" alt="" />
-
+                  <img
+                    src="./assets/images/footer-logo.png"
+                    width="100px"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="footer__title">
@@ -418,7 +604,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-lg-3   p-3">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
@@ -432,7 +618,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-6 col-lg-3   p-3">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
@@ -444,13 +630,17 @@
               </ul>
             </div>
           </div>
-          <div class="col-6 col-lg-3   p-3">
+          <div class="col-6 col-lg-3 p-2 p-sm-3">
             <div class="footer__list-container">
               <ul class="footer__list">
                 <li>
                   <a><strong>تحتاج للمساعده ؟</strong></a>
                 </li>
-                <li><a href=""> <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a></li>
+                <li>
+                  <a href="">
+                    <i class="fa-solid fa-envelope"></i> s3eedeb@gmail.com</a
+                  >
+                </li>
                 <li>
                   <a><strong>إشترك فى نشرتنا</strong></a>
                 </li>
@@ -463,17 +653,30 @@
     <div class="login__section-container" id="login">
       <div class="overlay || clickToClose" data-id="login"></div>
       <div class="center-content">
+      
         <div class="box__container">
+          <div
+          class="close__icon d-flex justify-content-center align-items-center || clickToClose"
+          data-id="login"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </div>
           <div class="row g-0">
             <div class="col-3 login-img d-md-block d-none"></div>
             <div class="col">
               <form action="" class="active">
                 <div class="flex-grow-1 p-3 gap-4 d-flex flex-column">
                   <div class="login-title d-flex justify-content-center mt-3">
-                    <button type="button" class="btn btn-dark">
+                    <button
+                      type="button"
+                      class="btn btn-dark px-2 py-3 px-sm-4 py-sm-3"
+                    >
                       تسجيل الدخول
                     </button>
-                    <button type="button" class="btn btn-light">
+                    <button
+                      type="button"
+                      class="btn btn-light px-2 py-3 px-sm-4 py-sm-3"
+                    >
                       حساب جديد
                     </button>
                   </div>
@@ -536,8 +739,12 @@
                     <div
                       class="d-flex justify-content-center align-content-center gap-2 || register-with"
                     >
-                      <div class="btn btn-danger"><span>Google</span></div>
-                      <div class="btn btn-primary"><span>Facebook</span></div>
+                      <div class="btn btn-danger p-2 px-4 p-sm-3 px-sm-5">
+                        <span>Google</span>
+                      </div>
+                      <div class="btn btn-primary p-2 px-4 p-sm-3 px-sm-5">
+                        <span>Facebook</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -557,9 +764,9 @@
           >
             <i class="fa-solid fa-xmark"></i>
           </div>
-          <div class="logo pb-3">
+          <a href="/" class="logo pb-3">
             <img src="./assets/images/ibuy-logo.png" alt="" width="90px" />
-          </div>
+          </a>
           <div class="side__menu-category">
             <ul class="gap-3 d-flex flex-column">
               <li><a href="">جميع المنتجات</a></li>
@@ -579,8 +786,10 @@
       <div class="cart-modal">
         <div class="d-flex flex-column">
           <div class="cart__title d-flex flex-row">
-            <div class="close__icon d-flex justify-content-center align-items-center || clickToClose"
-              data-id="cart__menu">
+            <div
+              class="close__icon d-flex justify-content-center align-items-center || clickToClose"
+              data-id="cart__menu"
+            >
               <i class="fa-solid fa-xmark"></i>
             </div>
             <div class="p-0 text-center">
@@ -588,9 +797,8 @@
             </div>
           </div>
           <div class="cart__menu-items">
-            <ul class="gap-3 d-flex flex-column cart__products">
-             
-              </ul>
+            <ul class="gap-3 d-flex flex-column cart__products"></ul>
+            <div class="checkout mt-3"></div>
           </div>
         </div>
       </div>
@@ -631,6 +839,34 @@
         responsive: {
           0: {
             items: 2,
+          },
+        },
+      });
+      $(".owl-carousel.comments__slider").owlCarousel({
+        loop: true,
+        rtl: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 5000,
+
+        // nav: true,
+        // navText: [
+        //   '<i class="fas fa-chevron-left"></i>',
+        //   '<i class="fas fa-chevron-right"></i>',
+        // ],
+        responsive: {
+          0: {
+            items: 1,
+          },
+
+          700: {
+            items: 2,
+          },
+          950: {
+            items: 3,
+          },
+          1150: {
+            items: 4,
           },
         },
       });

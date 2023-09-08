@@ -23,39 +23,26 @@
   <div class="navBar__container">
     <div class="navbar container">
       <div class="navBar__rightSide d-flex">
-        <div
-          class="navbar__toggle-menu d-flex popup-event"
-          data-id="category__menu"
-        >
+        <div class="navbar__toggle-menu d-flex popup-event" data-id="category__menu">
           <i class="fa-solid fa-bars-staggered"></i>
         </div>
         <div class="logo">
           <a href="/">
-          <img
-            src="./assets/images/ibuy-logo.png "
-            class="w-100"
-            alt="logo"
-          /></a>
+            <img src="./assets/images/ibuy-logo.png " class="w-100" alt="logo" /></a>
         </div>
         <div class="searchbar header_searchbar position-relative">
           <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="إبحث هنا عن أى شئ تريده..."
-          />
+          <input id="searchInput" type="search" placeholder="إبحث هنا عن أى شئ تريده..." />
           <div class="search__prodcut hidden"></div>
         </div>
       </div>
       <div class="navList-container">
         <ul class="nav__list d-flex gap-3">
-          <li class="loginBtn  py-2" >
-            <a href="/login.html"><i class="fa-regular fa-user"></i> تسجيل الدخول</a>
+          <li class="loginBtn popup-event py-2" data-id="login">
+            <a><i class="fa-regular fa-user"></i> تسجيل الدخول</a>
           </li>
-          <li class="myUser py-2" >
-            <a href="/myAccount.html"
-              ><i class="fa-regular fa-user"></i> حسابي</a
-            >
+          <li class="myUser py-2" data-id="login">
+            <a href="/myAccount.html"><i class="fa-regular fa-user"></i> حسابي</a>
           </li>
           <li class="py-2 position-relative || wishlist">
             <a><i class="fa-regular fa-heart"></i> المفضلة </a>
@@ -63,7 +50,7 @@
           </li>
           <li class="py-2 popup-event position-relative" data-id="cart__menu">
             <a><i class="fa-solid fa-cart-shopping"></i> عربة التسوق</a>
-            <span class="wishlist-counter">0</span>
+            <span class="cart-counter">0</span>
           </li>
         </ul>
       </div>
@@ -143,18 +130,17 @@
     </div>
   </div>
 
-  <div class="container py-5">
-    <div class="login__section py-5" id="login">
-      <!-- <div class="overlay || clickToClose" data-id="login"></div> -->
+  <div class="container py-4">
+    <div class="login__section py-4" id="login">
       <div class="center-content">
         <div class="login__container">
           <form action="" class="active">
-            <div class="flex-grow-1 p-3 gap-4 d-flex flex-column m-auto">
+            <div class="flex-grow-1 p-md-3 gap-4 d-flex flex-column m-auto p-0">
               <div class="login-title d-flex justify-content-center mt-3">
-                <button type="button" class="btn btn-dark">
+                <button type="button" class="btn btn-dark px-2 py-3 px-sm-4 py-sm-3">
                   تسجيل الدخول
                 </button>
-                <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light px-2 py-3 px-sm-4 py-sm-3">
                   حساب جديد
                 </button>
               </div>
@@ -195,8 +181,8 @@
                   <span>أو سجل الدخول بإستخدام</span>
                 </div>
                 <div class="d-flex justify-content-center align-content-center gap-2 || register-with">
-                  <div class="btn btn-danger"><span>Google</span></div>
-                  <div class="btn btn-primary"><span>Facebook</span></div>
+                  <div class="btn btn-danger p-2 px-4 p-sm-3 px-sm-5"><span>Google</span></div>
+                  <div class="btn btn-primary p-2 px-4 p-sm-3 px-sm-5"><span>Facebook</span></div>
                 </div>
               </div>
             </div>
@@ -321,9 +307,10 @@
           </div>
         </div>
         <div class="cart__menu-items">
-          <ul class="gap-3 d-flex flex-column cart__products">
-           
+          <ul class="gap-3 d-flex flex-column cart__products">                    
             </ul>
+            <div class="checkout mt-3">                
+            </div>
         </div>
       </div>
     </div>
